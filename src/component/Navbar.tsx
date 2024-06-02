@@ -26,7 +26,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="z-10 bg-white border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-white-200 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href="/home">
         <img
           src="/profile/WVBrandnameStoreAI.png"

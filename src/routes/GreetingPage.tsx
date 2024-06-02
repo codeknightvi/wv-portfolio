@@ -33,7 +33,7 @@ const TypeWriter = ({ text, delay }: typeWriterPropsType) => {
 };
 const GreetingPage = () => {
   return (
-    <div className="text-2xl">
+    <div className="text-2xl md:text-4xl centered">
       <TypeWriter
         text="Greeting! welcome to John's portfolio website you may proceed :) ==> "
         delay={40}
