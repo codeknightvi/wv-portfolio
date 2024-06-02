@@ -31,13 +31,6 @@ nav {
   -moz-osx-font-smoothing: grayscale;
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 }
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: center;
-}
 
 /* 
 

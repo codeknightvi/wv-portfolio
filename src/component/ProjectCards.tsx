@@ -2,7 +2,7 @@ import { projectPropTypes } from "../types";
 
 const ProjectCards = ({ projects }: projectPropTypes) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 content-center justify-items-center md:w-[70%] mx-auto ">
+    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4 ">
       {projects.map((el, index: number) => (
         <a
           key={index}
