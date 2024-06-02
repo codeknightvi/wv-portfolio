@@ -1,13 +1,15 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 
 const Root = () => {
   return (
     <>
       <Navbar />
-      Root
-      <Outlet />
+      <div className="mt-20 ">
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 };
