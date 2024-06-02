@@ -1,4 +1,3 @@
-import React from "react";
 import { softwareSkills } from "../base_constant";
 
 const Skills = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { education } from "../base_constant";
 
 const AboutPage = () => {
