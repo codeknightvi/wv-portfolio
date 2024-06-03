@@ -12,3 +12,13 @@ export interface typeWriterPropsType {
   text: string;
   delay: number;
 }
+
+export interface galleryType {
+  src: string;
+}
+export interface galleryPropsType {
+  data: galleryType[];
+  id: string;
+  isVisible?: any;
+  ref?: any;
+}

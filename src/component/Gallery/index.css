@@ -1,0 +1,44 @@
+.container {
+  /* width: 1000px; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  margin: 0 5px;
+  background-color: null;
+  overflow: hidden;
+  transition: flex 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.gallery-item img {
+  object-fit: cover;
+  width: 100px;
+  height: 100%;
+  /* transform: scale(2); */
+  overflow: hidden;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.gallery-item img:hover {
+  width: 800px;
+  object-fit: cover;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  border-radius: 100%;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
