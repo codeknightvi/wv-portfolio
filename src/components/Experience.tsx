@@ -2,7 +2,7 @@ import { experience } from "@mock-data/experience";
 
 const Experience = () => {
   return (
-    <section className="pt-5 md:pt-10">
+    <section className="pt-5 md:pt-10 ">
       <h1 className="text-3xl section">Experience</h1>
       <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4">
         {experience.map((exp, index) => {
