@@ -1,4 +1,3 @@
-import { galleryType } from "../../../src/types";
 import img5 from "/Design/TU_work/1-1.png";
 import img6 from "/Design/TU_work/1-2.png";
 import img7 from "/Design/TU_work/1-3.png";
@@ -34,7 +33,9 @@ import img31 from "/Design/TU_work/4-6.png";
 import img32 from "/Design/TU_work/4-7.png";
 import img33 from "/Design/TU_work/4-8.png";
 
-export const threeddesign: galleryType[] = [
+export const threeddesign: {
+  src: string;
+}[] = [
   {
     src: img5,
   },

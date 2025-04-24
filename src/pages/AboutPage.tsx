@@ -1,6 +1,6 @@
-import { education } from "../base_constant";
+import { education } from "@mock-data/education";
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <div className="mx-16">
       <div className="m-0 sm:m-4 p-0 sm:p-2 lg:p-10 text-base lg:text-3xl ">
@@ -33,6 +33,4 @@ const AboutPage = () => {
       </section>
     </div>
   );
-};
-
-export default AboutPage;
+}

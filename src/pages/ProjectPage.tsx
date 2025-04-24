@@ -1,5 +1,5 @@
-import ProjectCards from "../component/ProjectCards";
-import { projects } from "../base_constant";
+import { projects } from "@mock-data/projects";
+import ProjectCards from "@components/ProjectCards";
 
 const ProjectPage = () => {
   return (

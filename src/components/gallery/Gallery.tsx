@@ -1,25 +1,32 @@
 import { MouseEvent, useState } from "react";
 import "./index.css";
-import { galleryPropsType } from "../../types";
+import { GalleryType } from "@_types/gallery";
 
-const Gallery = ({ data, id }: galleryPropsType) => {
+type GalleryPropsType = {
+  data: GalleryType[];
+  id: string;
+  isVisible?: boolean;
+  ref?: Node;
+};
+
+const Gallery = ({ data, id }: GalleryPropsType) => {
   const [MousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
-  const handleMouseMove = (ev: MouseEvent<HTMLDivElement, MouseEvent>) => {
+
+  const handleMouseMove = (ev: MouseEvent) => {
     setMousePosition({ x: ev.pageX, y: ev.pageY });
   };
 
   return (
     <div
       id={id}
-      // ref={ref}
-      className={`container transition-opacity ease-in duration-700}`}
-      onMouseMove={(ev: any) => handleMouseMove(ev)}
+      className={`container transition-opacity ease-in duration-700`}
+      onMouseMove={(ev: MouseEvent) => handleMouseMove(ev)}
     >
       <div
-        className={`indicator absolute top-[-15px] `}
+        className="indicator absolute top-[-15px]"
         style={{ left: `${MousePosition.x - 69}px` }}
       ></div>
       {/* map */}

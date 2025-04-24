@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { contactChannel, routesLinks } from "../base_constant";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
+import { contactChannel } from "@mock-data/contact";
+import { routes } from "@config/routes";
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
           isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"
         } absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 bg-white md:bg-gray dark:bg-gray-800 dark:border-gray-700`}
       >
-        {routesLinks.map((link, index) => (
+        {routes.map((link, index) => (
           <NavLink
             key={index}
             to={link.path}
