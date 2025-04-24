@@ -9,7 +9,7 @@ import Gallery from "@components/gallery/Gallery";
 import ProjectJumper from "@components/ProjectJumper";
 import RevealOnScroll from "@hooks/revealOnScroll";
 
-const WorkPage = () => {
+export default function WorkPage() {
   return (
     <div className="mx-16">
       <Experience />
@@ -31,6 +31,4 @@ const WorkPage = () => {
       </div>
     </div>
   );
-};
-
-export default WorkPage;
+}
