@@ -1,9 +1,11 @@
 import { BAT_CAVE_WALLPAPER } from "@config/env";
 
 const HomeCover = () => {
-  console.log("test", BAT_CAVE_WALLPAPER);
   return (
-    <div className={`bg-[url(${BAT_CAVE_WALLPAPER})] bg-cover h-full`}>
+    <div
+      className="bg-cover h-full"
+      style={{ backgroundImage: `url(${BAT_CAVE_WALLPAPER})` }}
+    >
       <div className="flex justify-between items-center ml-14 md:ml-28 lg:ml-28 py-4">
         <div>
           <h1 className="text-white text-2xl md:text-4xl ">Hello, World !</h1>
