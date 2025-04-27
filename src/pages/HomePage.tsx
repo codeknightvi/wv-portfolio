@@ -1,5 +1,5 @@
-import HomeCover from "../component/HomeCover";
-import Skills from "../component/Skills";
+import HomeCover from "@components/HomeCover";
+import Skills from "@components/Skills";
 
 const HomePage = () => {
   return (

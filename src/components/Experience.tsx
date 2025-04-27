@@ -1,4 +1,4 @@
-import { experience } from "../base_constant";
+import { experience } from "@mock-data/experience";
 
 const Experience = () => {
   return (

@@ -1,4 +1,4 @@
-import { softwareSkills } from "../base_constant";
+import { softwareSkills } from "@mock-data/softwareSkills";
 
 const Skills = () => {
   return (
