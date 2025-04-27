@@ -106,7 +106,7 @@ const Navbar = () => {
                 !listVisivle ? "invisible" : "visible"
               }`}
             >
-              <ul className="text-left border rounded ">
+              <ul className="text-left border rounded-sm ">
                 {contactChannel.map((link, index) => (
                   <li
                     className="px-4 py-1 hover:bg-gray-100 border-b z-10"
