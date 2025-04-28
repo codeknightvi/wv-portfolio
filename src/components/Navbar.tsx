@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
-import { contactChannel } from "@mock-data/contact";
+import { ContactChannel, contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 
 export default function Navbar() {
@@ -25,6 +25,14 @@ export default function Navbar() {
     () => setIsToggle((state) => !state),
     [setIsToggle]
   );
+
+  const dropdownHandler = (l: ContactChannel) => {
+    if (l.src === "gmail" || l.src === "call") {
+      navigator.clipboard.writeText(l.via);
+      alert(`Copy ${l.via} to clipboard`);
+      return;
+    } else window.open(l.url, "_blank");
+  };
 
   return (
     <nav className="z-10 bg-[#ffffff] border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
@@ -66,6 +74,7 @@ export default function Navbar() {
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
           </NavLink>
         ))}
+        {/* dropdown */}
         <li className="relative flex justify-center items-center z-2 ">
           <button
             className="
@@ -106,23 +115,19 @@ export default function Navbar() {
                 !listVisivle ? "invisible" : "visible"
               }`}
             >
-              <ul className="text-left border rounded-sm ">
+              <ul className="text-left border rounded-sm">
                 {contactChannel.map((link, index) => (
                   <li
-                    className="px-4 py-1 hover:bg-gray-100 border-b z-10"
+                    className="px-4 py-1 hover:bg-gray-100 border-b z-10 cursor-pointer"
                     key={index}
                   >
-                    <a
+                    <div
                       onClick={() => {
-                        navigator.clipboard.writeText(link.name);
+                        dropdownHandler(link);
                       }}
-                      href={link.url}
-                      target="_blank"
-                      // // without
-                      // rel="noreferrer"
                     >
-                      {link.source}: {link.name}
-                    </a>
+                      {link.src}: {link.via}
+                    </div>
                   </li>
                 ))}
               </ul>
