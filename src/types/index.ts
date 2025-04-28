@@ -1,3 +1,7 @@
+export type GalleryType = {
+  src: string;
+};
+
 export type Project = {
   name: string;
   url: string;

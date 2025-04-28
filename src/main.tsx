@@ -8,6 +8,7 @@ import HomePage from "@pages/HomePage";
 import Root from "./Root";
 import AboutPage from "@pages/AboutPage";
 import LandingPage from "@pages/LandingPage";
+import { routes } from "@config/routes";
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,10 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       { path: "/", element: <LandingPage />, index: true },
-      { path: "/about", element: <AboutPage /> },
-      { path: "/home", element: <HomePage /> },
-      { path: "/work", element: <WorkPage /> },
-      { path: "/projects", element: <ProjectPage /> },
+      { path: routes.about.path, element: <AboutPage /> },
+      { path: routes.home.path, element: <HomePage /> },
+      { path: routes.work.path, element: <WorkPage /> },
+      { path: routes.projects.path, element: <ProjectPage /> },
     ],
   },
   { path: "*", element: <>invalid page</> },

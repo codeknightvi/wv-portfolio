@@ -1,6 +1,6 @@
 import { MouseEvent, useState } from "react";
 import "./index.css";
-import { GalleryType } from "@_types/gallery";
+import { GalleryType } from "@_types";
 
 type GalleryPropsType = {
   data: GalleryType[];
@@ -9,7 +9,7 @@ type GalleryPropsType = {
   ref?: Node;
 };
 
-const Gallery = ({ data, id }: GalleryPropsType) => {
+export default function Gallery({ data, id }: GalleryPropsType) {
   const [MousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -32,13 +32,11 @@ const Gallery = ({ data, id }: GalleryPropsType) => {
       {/* map */}
       <div className="gallery">
         {data.map((el) => (
-          <div className="gallery-item cursor-pointer " key={el.src}>
+          <div className="gallery-item cursor-pointer" key={el.src}>
             <img src={el.src} alt="image" />
           </div>
         ))}
       </div>
     </div>
   );
-};
-
-export default Gallery;
+}

@@ -1,6 +1,6 @@
-import { Project } from "@_types/project";
+import { Project } from "@_types";
 
-const ProjectCards = ({ projects }: { projects: Project[] }) => {
+export default function ProjectCards({ projects }: { projects: Project[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4">
       {projects.map((el: Project, index: number) => (
@@ -40,6 +40,4 @@ const ProjectCards = ({ projects }: { projects: Project[] }) => {
       ))}
     </div>
   );
-};
-
-export default ProjectCards;
+}

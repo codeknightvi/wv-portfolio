@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
 import { contactChannel } from "@mock-data/contact";
@@ -21,7 +21,7 @@ export default function Navbar() {
     );
   }, []);
 
-  const toggle = React.useCallback(
+  const toggleHandler = useCallback(
     () => setIsToggle((state) => !state),
     [setIsToggle]
   );
@@ -40,7 +40,7 @@ export default function Navbar() {
           color={"#00000"}
           height="20px"
           width="20px"
-          onClick={toggle}
+          onClick={toggleHandler}
         />
       </button>
       <ul
@@ -49,10 +49,10 @@ export default function Navbar() {
           isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"
         } absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 bg-white md:bg-gray dark:bg-gray-800 dark:border-gray-700`}
       >
-        {routes.map((link, index) => (
+        {Object.keys(routes).map((link) => (
           <NavLink
-            key={index}
-            to={link.path}
+            key={link}
+            to={link}
             className="group text-black transition duration-300 hover:text-gray-400 z-10 "
             style={({ isActive, isPending, isTransitioning }) => {
               return {
@@ -62,7 +62,7 @@ export default function Navbar() {
               };
             }}
           >
-            <li className="px-2">{link.name}</li>
+            <li className="px-2">{link}</li>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
           </NavLink>
         ))}
