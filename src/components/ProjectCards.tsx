@@ -2,7 +2,7 @@ import { Project } from "@_types/project";
 
 const ProjectCards = ({ projects }: { projects: Project[] }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4">
       {projects.map((el: Project, index: number) => (
         <a
           key={index}

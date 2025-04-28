@@ -4,7 +4,7 @@ import { MenuOutline } from "react-ionicons";
 import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
 
@@ -27,7 +27,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="z-10 bg-[#ffffff] border-solid border-2  border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-[#ffffff] border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href="/home">
         <img
           src="/profile/WVBrandnameStoreAI.png"
@@ -132,6 +132,4 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
-
-export default Navbar;
+}

@@ -18,7 +18,7 @@ const HomeCover = () => {
             frontend developer based in Bangkok, Thailand.
           </p>
         </div>
-        <div className="">
+        <div>
           <img
             className="max-h-screen"
             src="/profile/fotor-ai-2023082910571-removebg.png"

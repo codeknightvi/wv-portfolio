@@ -1,17 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 
-const Root = () => {
+export default function Root() {
   return (
-    <>
+    <div className="h-[calc(100vh-100px)]">
       <Navbar />
-      <div className="mt-20">
+      <div className="p-10 pt-[100px] h-[calc(100vh-100px)] bg-white">
         <Outlet />
       </div>
-      <Footer />
-    </>
+    </div>
   );
-};
-
-export default Root;
+}

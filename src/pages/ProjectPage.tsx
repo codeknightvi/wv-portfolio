@@ -3,8 +3,8 @@ import ProjectCards from "@components/ProjectCards";
 
 export default function ProjectPage() {
   return (
-    <div className="pt-4 px-4 max-w-fit	mx-auto ">
+    <>
       <ProjectCards projects={projects} />
-    </div>
+    </>
   );
 }

@@ -2,7 +2,7 @@ import { education } from "@mock-data/education";
 
 export default function AboutPage() {
   return (
-    <div className="mx-16">
+    <>
       <div className="m-0 sm:m-4 p-0 sm:p-2 lg:p-10 text-base lg:text-3xl ">
         A passionate front-end developer with the previous background in graphic
         designing, comprehensive aspects of real estate market analysis, project
@@ -31,6 +31,6 @@ export default function AboutPage() {
           })}
         </ol>
       </section>
-    </div>
+    </>
   );
 }
