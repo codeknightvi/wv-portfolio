@@ -51,3 +51,10 @@ nav {
   background-color: #ffffff;
   height: 100px;
 }
+
+@theme {
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-tertiary: #000000;
+  --color-quaternary: #000000;
+}

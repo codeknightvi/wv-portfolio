@@ -12,7 +12,7 @@ const Experience = () => {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {exp.period}
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-primary">
                 {exp.position} | @ {exp.place}
               </h3>
               <ul>

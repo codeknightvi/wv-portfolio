@@ -12,7 +12,7 @@ export default function ProjectCards({ projects }: { projects: Project[] }) {
           className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
         >
           <div className="flex flex-col items-center justify-between h-full">
-            <h5 className="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-primary">
               {el.name}
             </h5>
             <div className="flex flex-col md:flex-row items-center">

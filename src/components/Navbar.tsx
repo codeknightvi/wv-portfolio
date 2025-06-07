@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
 import { ContactChannel, contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
@@ -27,15 +27,15 @@ export default function Navbar() {
   );
 
   const dropdownHandler = (l: ContactChannel) => {
-    if (l.src === "gmail" || l.src === "call") {
+    if (!l.url) {
       navigator.clipboard.writeText(l.via);
-      alert(`Copy ${l.via} to clipboard`);
+      alert(`Copied ${l.via} to clipboard`);
       return;
     } else window.open(l.url, "_blank");
   };
 
   return (
-    <nav className="z-10 bg-[#ffffff] border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-secondary border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href="/home">
         <img
           src="/profile/WVBrandnameStoreAI.png"
@@ -45,7 +45,7 @@ export default function Navbar() {
       </a>
       <button className="me-4 cursor-ponter md:hidden block z-20">
         <MenuOutline
-          color={"#00000"}
+          color="#00000"
           height="20px"
           width="20px"
           onClick={toggleHandler}
@@ -61,7 +61,7 @@ export default function Navbar() {
           <NavLink
             key={link}
             to={link}
-            className="group text-black transition duration-300 hover:text-gray-400 z-10 "
+            className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "
             style={({ isActive, isPending, isTransitioning }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
