@@ -1,12 +1,14 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
 import { ContactChannel, contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
+import { ToastContext } from "context/toast";
 
 export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
+  const toastReducer = useContext(ToastContext);
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
@@ -29,7 +31,8 @@ export default function Navbar() {
   const dropdownHandler = (l: ContactChannel) => {
     if (!l.url) {
       navigator.clipboard.writeText(l.via);
-      alert(`Copied ${l.via} to clipboard`);
+      toastReducer?.action.toggleToast();
+      toastReducer?.action.setToastMessage(l.via);
       return;
     } else window.open(l.url, "_blank");
   };

@@ -1,13 +1,27 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "@components/Navbar";
+import Toast from "@components/Toast";
+import { ToastProvider, ToastContext } from "context/toast";
+import { useContext } from "react";
 
-export default function Root() {
+function Layout() {
+  const toastContext = useContext(ToastContext);
+
   return (
     <div className="h-full">
       <Navbar />
       <div className="p-10 pt-[100px] min-h-[calc(100vh)] bg-white">
+        {toastContext?.isToastOpen && <Toast />}
         <Outlet />
       </div>
     </div>
+  );
+}
+
+export default function Root() {
+  return (
+    <ToastProvider>
+      <Layout />
+    </ToastProvider>
   );
 }

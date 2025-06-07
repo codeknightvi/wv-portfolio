@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { ToastContext } from "context/toast";
+import { useContext } from "react";
 
 export default function Toast() {
-  const [isOpen, setIsOpen] = useState(false);
+  const toastContext = useContext(ToastContext);
 
   return (
-    <div>
-      <button onClick={() => setIsOpen(true)}>Open Toast</button>
-      {isOpen && <div>Toast</div>}
+    <div className="toast fixed top-10 right-[50%] m-4 h-10 z-100 bg-red-500">
+      {toastContext?.toastMessage}
     </div>
   );
 }
