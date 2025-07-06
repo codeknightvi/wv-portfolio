@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
 type TypeWriterProps = { text: string; delay: number };
 
-const TypeWriter = ({ text, delay }: TypeWriterProps) => {
+export default function TypeWriter({ text, delay }: TypeWriterProps) {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [linkVisible, setLinkVisivle] = useState(false);
+
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
@@ -23,7 +23,7 @@ const TypeWriter = ({ text, delay }: TypeWriterProps) => {
   }, [currentIndex, delay, text]);
 
   return (
-    <span>
+    <span className="md:absolute md:top-[50%] md:left-[50%] md:transform md:translate-y-[-50%] md:translate-x-[-50%] md:origin-center">
       {currentText}
       {linkVisible ? (
         <Link to={"/home"}>
@@ -32,16 +32,4 @@ const TypeWriter = ({ text, delay }: TypeWriterProps) => {
       ) : null}
     </span>
   );
-};
-const GreetingPage = () => {
-  return (
-    <div className="pt-10 md:pt-0 text-2xl md:text-4xl centered md:absolute md:top-[50%] md:left-[50%] md:transform md:translate-y-[-50%] md:translate-x-[-50%] md:origin-center	">
-      <TypeWriter
-        text="Greeting! welcome to John's portfolio website you may proceed :) ==> "
-        delay={40}
-      />
-    </div>
-  );
-};
-
-export default GreetingPage;
+}

@@ -1,5 +1,6 @@
-export const routes = [
-  { name: "about", path: "/about" },
-  { name: "work", path: "/work" },
-  { name: "projects", path: "/projects" },
-];
+export const routes = {
+  home: { path: "/home" },
+  about: { path: "/about" },
+  work: { path: "/work" },
+  projects: { path: "/projects" },
+};

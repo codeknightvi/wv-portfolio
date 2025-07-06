@@ -3,18 +3,17 @@ import {
   rendered2,
   threeddesign,
   threeddesign2,
-} from "../../public/Design/TU_work";
-import Experience from "@components/Experience";
-import Gallery from "@components/gallery/Gallery";
-import ProjectJumper from "@components/ProjectJumper";
+} from "../../../public/Design/TU_work";
+import Experience from "@pages/WorkPage/Experience";
+import Gallery from "@pages/WorkPage/Gallery/Gallery";
+import ProjectJumper from "@pages/WorkPage/ProjectJumper";
 import RevealOnScroll from "@hooks/revealOnScroll";
 
-const WorkPage = () => {
+export default function WorkPage() {
   return (
-    <div className="mx-16">
+    <>
       <Experience />
       <ProjectJumper />
-
       <div className="flex flex-col gap-y-6">
         <RevealOnScroll>
           <Gallery data={threeddesign} id="3d" />
@@ -29,8 +28,6 @@ const WorkPage = () => {
           <Gallery data={rendered2} id="render2" />
         </RevealOnScroll>
       </div>
-    </div>
+    </>
   );
-};
-
-export default WorkPage;
+}

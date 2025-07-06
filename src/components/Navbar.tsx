@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
-import { contactChannel } from "@mock-data/contact";
+import { ContactChannel, contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
+import { ToastContext } from "context/toast";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
+  const toastReducer = useContext(ToastContext);
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
@@ -21,13 +23,22 @@ const Navbar = () => {
     );
   }, []);
 
-  const toggle = React.useCallback(
+  const toggleHandler = useCallback(
     () => setIsToggle((state) => !state),
     [setIsToggle]
   );
 
+  const dropdownHandler = (l: ContactChannel) => {
+    if (!l.url) {
+      navigator.clipboard.writeText(l.via);
+      toastReducer?.action.toggleToast();
+      toastReducer?.action.setToastMessage(l.via);
+      return;
+    } else window.open(l.url, "_blank");
+  };
+
   return (
-    <nav className="z-10 bg-[#ffffff] border-solid border-2  border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-secondary border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href="/home">
         <img
           src="/profile/WVBrandnameStoreAI.png"
@@ -37,10 +48,10 @@ const Navbar = () => {
       </a>
       <button className="me-4 cursor-ponter md:hidden block z-20">
         <MenuOutline
-          color={"#00000"}
+          color="#00000"
           height="20px"
           width="20px"
-          onClick={toggle}
+          onClick={toggleHandler}
         />
       </button>
       <ul
@@ -49,11 +60,11 @@ const Navbar = () => {
           isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"
         } absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 bg-white md:bg-gray dark:bg-gray-800 dark:border-gray-700`}
       >
-        {routes.map((link, index) => (
+        {Object.keys(routes).map((link) => (
           <NavLink
-            key={index}
-            to={link.path}
-            className="group text-black transition duration-300 hover:text-gray-400 z-10 "
+            key={link}
+            to={link}
+            className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "
             style={({ isActive, isPending, isTransitioning }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -62,10 +73,11 @@ const Navbar = () => {
               };
             }}
           >
-            <li className="px-2">{link.name}</li>
+            <li className="px-2">{link}</li>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
           </NavLink>
         ))}
+        {/* dropdown */}
         <li className="relative flex justify-center items-center z-2 ">
           <button
             className="
@@ -106,23 +118,19 @@ const Navbar = () => {
                 !listVisivle ? "invisible" : "visible"
               }`}
             >
-              <ul className="text-left border rounded ">
+              <ul className="text-left border rounded-sm">
                 {contactChannel.map((link, index) => (
                   <li
-                    className="px-4 py-1 hover:bg-gray-100 border-b z-10"
+                    className="px-4 py-1 hover:bg-gray-100 border-b z-10 cursor-pointer"
                     key={index}
                   >
-                    <a
+                    <div
                       onClick={() => {
-                        navigator.clipboard.writeText(link.name);
+                        dropdownHandler(link);
                       }}
-                      href={link.url}
-                      target="_blank"
-                      // // without
-                      // rel="noreferrer"
                     >
-                      {link.source}: {link.name}
-                    </a>
+                      {link.src}: {link.via}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -132,6 +140,4 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
-
-export default Navbar;
+}

@@ -1,22 +1,26 @@
-export const contactChannel = [
+export type ContactChannel = {
+  src: string;
+  via: string;
+  url?: string;
+};
+
+export const contactChannel: ContactChannel[] = [
   {
-    source: "github",
-    name: "purrrgrammer",
-    url: "https://github.com/Purrrgrammer",
+    src: "github",
+    via: "codeknightvi",
+    url: "https://github.com/codeknightvi",
   },
   {
-    source: "linkedin",
-    name: "woramjvic",
+    src: "linkedin",
+    via: "woramjvic",
     url: "https://www.linkedin.com/in/woramjvic/",
   },
   {
-    source: "gmail",
-    name: "woram.j.vic@gmail.com",
-    url: "https://www.linkedin.com/in/woramjvic/",
+    src: "gmail",
+    via: "johnvforwork@gmail.com",
   },
   {
-    source: "call",
-    name: "+66 806495969",
-    url: "https://www.linkedin.com/in/woramjvic/",
+    src: "call",
+    via: "+66 806495969",
   },
 ];

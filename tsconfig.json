@@ -12,6 +12,7 @@
       "@mock-data/*": ["./mock-data/*"],
       "@constants/*": ["./constants/*"],
       "@constants": ["./constants/index.ts"],
+      "@_types": ["./types/index.ts"],
       "@_types/*": ["./types/*"]
     },
     "typeRoots": ["./src/@types", "./node_modules/@types"],
