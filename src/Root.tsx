@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "@components/Navbar";
 import Toast from "@components/Toast";
 import { ToastProvider, ToastContext } from "context/toast";
 import { useContext } from "react";
+import Navbar from "@components/Navbar";
 
 function Layout() {
   const toastContext = useContext(ToastContext);
