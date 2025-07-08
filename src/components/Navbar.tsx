@@ -58,7 +58,7 @@ export default function Navbar() {
       <ul
         className={twMerge(
           "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-gray dark:bg-gray-800 dark:border-gray-700",
-          isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"
+          [isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"]
         )}
       >
         {Object.keys(routes).map((link) => (
@@ -117,9 +117,10 @@ export default function Navbar() {
 
             {/* contact */}
             <div
-              className={`absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-white ${
-                !listVisivle ? "invisible" : "visible"
-              }`}
+              className={twMerge(
+                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-white",
+                [!listVisivle ? "invisible" : "visible"]
+              )}
             >
               <ul className="text-left border rounded-sm">
                 {contactChannel.map((link, index) => (

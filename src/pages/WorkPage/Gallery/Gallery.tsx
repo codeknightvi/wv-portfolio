@@ -22,7 +22,7 @@ export default function Gallery({ data, id }: GalleryPropsType) {
   return (
     <div
       id={id}
-      className={`container transition-opacity ease-in duration-700`}
+      className="container transition-opacity ease-in duration-700"
       onMouseMove={(ev: MouseEvent) => handleMouseMove(ev)}
     >
       <div
