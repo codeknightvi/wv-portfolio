@@ -1,6 +1,22 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@components": ["./components/index.ts"],
+      "@pages/*": ["./pages/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
+      "@utils": ["./utils/index.ts"],
+      "@config/*": ["./config/*"],
+      "@mock-data/*": ["./mock-data/*"],
+      "@constants/*": ["./constants/*"],
+      "@constants": ["./constants/index.ts"],
+      "@_types": ["./types/index.ts"],
+      "@_types/*": ["./types/*"]
+    },
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",

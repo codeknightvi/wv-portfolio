@@ -1,6 +1,6 @@
-import { softwareSkills } from "../base_constant";
+import { softwareSkills } from "@mock-data/softwareSkills";
 
-const Skills = () => {
+export default function Skills() {
   return (
     <section className="softwareskill">
       {softwareSkills.map((el, index) => (
@@ -26,6 +26,4 @@ const Skills = () => {
       ))}
     </section>
   );
-};
-
-export default Skills;
+}

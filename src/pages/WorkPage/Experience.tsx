@@ -1,8 +1,8 @@
-import { experience } from "../base_constant";
+import { experience } from "@mock-data/experience";
 
 const Experience = () => {
   return (
-    <section className="pt-5 md:pt-10">
+    <section className="pt-5 md:pt-10 ">
       <h1 className="text-3xl section">Experience</h1>
       <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4">
         {experience.map((exp, index) => {
@@ -12,7 +12,7 @@ const Experience = () => {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {exp.period}
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-primary">
                 {exp.position} | @ {exp.place}
               </h3>
               <ul>
