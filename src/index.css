@@ -58,3 +58,13 @@ nav {
   --color-tertiary: #000000;
   --color-quaternary: #000000;
 }
+
+.toast {
+  z-index: 100;
+  width: 20%;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}

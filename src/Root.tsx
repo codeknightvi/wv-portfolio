@@ -9,9 +9,9 @@ function Layout() {
 
   return (
     <div className="h-full">
+      {toastContext?.isToastOpen && <Toast />}
       <Navbar />
       <div className="p-10 pt-[100px] min-h-[calc(100vh)] bg-white">
-        {toastContext?.isToastOpen && <Toast />}
         <Outlet />
       </div>
     </div>

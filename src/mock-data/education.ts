@@ -1,4 +1,6 @@
-export const education = [
+import { Education } from "@_types";
+
+export const education: Education[] = [
   {
     year: "2023-2023",
     place: "Full-Stack Development Bootcamp, WeStride Institute of Technology",

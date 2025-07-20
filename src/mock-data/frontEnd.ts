@@ -1,4 +1,6 @@
-export const frontEnd = [
+import { Skill } from "@_types";
+
+export const frontEnd: Skill[] = [
   {
     name: "javascript",
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",

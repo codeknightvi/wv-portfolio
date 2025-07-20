@@ -22,7 +22,7 @@ const ToastContext = createContext<ToastContext | null>(null);
 const ToastProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [duration, _setDuration] = useState(3000);
+  const [duration, _setDuration] = useState(2000);
 
   useEffect(() => {
     if (isOpen) {
