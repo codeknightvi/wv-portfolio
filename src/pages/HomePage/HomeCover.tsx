@@ -1,4 +1,5 @@
 import { BAT_CAVE_WALLPAPER } from "@config/env";
+import { wvBackground } from "@constants/imagePath";
 
 const HomeCover = () => {
   return (
@@ -19,11 +20,7 @@ const HomeCover = () => {
           </p>
         </div>
         <div>
-          <img
-            className="max-h-screen"
-            src="/profile/fotor-ai-2023082910571-removebg.png"
-            alt="profilepic"
-          />
+          <img className="max-h-screen" src={wvBackground} alt="profilepic" />
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Skills() {
             {el.skills.map((language, index) => (
               <div
                 key={index}
-                className="mx-4 md:mx-10 hover:scale-125 transition transition ease-in-out"
+                className="mx-4 md:mx-10 hover:scale-125 transition ease-in-out"
               >
                 <img
                   src={language.url}

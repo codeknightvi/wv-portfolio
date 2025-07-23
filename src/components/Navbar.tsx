@@ -6,6 +6,7 @@ import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
 import { twMerge } from "tailwind-merge";
 import { ContactChannel } from "@_types";
+import { wvLogo } from "@constants/imagePath";
 
 export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);
@@ -41,11 +42,7 @@ export default function Navbar() {
   return (
     <nav className="z-10 bg-secondary border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
-        <img
-          src="/profile/WVBrandnameStoreAI.png"
-          className="h-10 mr-3"
-          alt="WVLogo"
-        />
+        <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
       </a>
       {/* menu icon */}
       <button className="me-4 cursor-ponter md:hidden block z-10">
