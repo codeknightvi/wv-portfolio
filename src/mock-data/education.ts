@@ -10,7 +10,7 @@ export const education: Education[] = [
     place:
       "Bachelor of Urban Environmental Planning and Development; Minor Program in Real Estate Development, Thammasat University (Second- class Honors)",
   },
-  {
+{
     year: "2015-2017",
     place:
       "English-Mathematics Program, Wat Phrasri Mahadhat Secondary Demonstration School",

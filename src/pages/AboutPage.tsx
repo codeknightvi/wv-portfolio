@@ -1,9 +1,9 @@
+import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { education } from "@mock-data/education";
-import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function AboutPage() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { hoveredIndex, handleOnMouseEnter } = useHoveredPoint();
 
   return (
     <>
@@ -19,13 +19,13 @@ export default function AboutPage() {
       </div>
       <section className="">
         <h1 className="text-3xl section">Education</h1>
-        <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4 ">
+        <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4">
           {education.map((edu, index) => {
             return (
               <li key={index} className="mb-10 ml-4">
                 <div
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+                  onMouseEnter={() => handleOnMouseEnter(index)}
+                  onMouseLeave={() => handleOnMouseEnter(null)}
                   className={twMerge(
                     "absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-primary dark:border-gray-900 dark:bg-gray-700",
                     [hoveredIndex === index && "bg-secondary"]

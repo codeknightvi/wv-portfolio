@@ -1,10 +1,11 @@
 import { useEffect, useState, useCallback, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
-import { ContactChannel, contactChannel } from "@mock-data/contact";
+import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
 import { twMerge } from "tailwind-merge";
+import { ContactChannel } from "@_types";
 
 export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);

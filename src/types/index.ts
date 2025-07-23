@@ -16,6 +16,13 @@ export type Gallery = {
   src: string;
 };
 
+export type GalleryPropsType = {
+  data: Gallery[];
+  id: string;
+  isVisible?: boolean;
+  ref?: Node;
+};
+
 export type Skill = {
   name: string;
   url: string;

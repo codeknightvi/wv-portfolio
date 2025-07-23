@@ -29,6 +29,7 @@ export default function RevealOnScroll({
   const classes = `transition-opacity duration-1000 ${
     isVisible ? "opacity-100" : "opacity-0"
   }`;
+
   return React.createElement("div", {
     ref: ref,
     className: classes,

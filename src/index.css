@@ -19,7 +19,7 @@
 
 :root {
   /* padding: 10px; */
-  background-color: red;
+  background-color: white;
   overflow-x: hidden;
   line-height: 1.5;
   color-scheme: light dark;
@@ -38,7 +38,7 @@
 
 html,
 body {
-  background-color: blue;
+  background-color: white;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   box-sizing: border-box;
