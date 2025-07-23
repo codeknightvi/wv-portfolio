@@ -64,6 +64,7 @@ export default function Navbar() {
       >
         {Object.keys(routes).map((link) => (
           <NavLink
+            onClick={toggleHandler}
             key={link}
             to={link}
             className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "

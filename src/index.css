@@ -61,9 +61,10 @@ nav {
 
 .toast {
   z-index: 100;
+  min-width: 300px;
   width: 20%;
   position: fixed;
-  top: 15%;
+  top: 90px;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
