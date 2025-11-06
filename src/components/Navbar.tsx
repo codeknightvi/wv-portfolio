@@ -9,25 +9,25 @@ import { ContactChannel } from "@_types";
 import { wvLogo } from "@constants/imagePath";
 
 export default function Navbar() {
-  const [isToggle, setIsToggle] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
   const toastReducer = useContext(ToastContext);
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
-      setIsToggle(true);
+      setIsMenuOpen(true);
     }
     if (window.innerWidth < 768) {
-      setIsToggle(false);
+      setIsMenuOpen(false);
     }
     window.addEventListener("resize", () =>
-      window.innerWidth <= 960 ? setIsToggle(false) : setIsToggle(true)
+      window.innerWidth <= 960 ? setIsMenuOpen(false) : setIsMenuOpen(true)
     );
   }, []);
 
   const toggleHandler = useCallback(
-    () => setIsToggle((state) => !state),
-    [setIsToggle]
+    () => setIsMenuOpen((state) => !state),
+    [setIsMenuOpen]
   );
 
   const dropdownHandler = (l: ContactChannel) => {
@@ -44,7 +44,7 @@ export default function Navbar() {
       <a href={routes.home.path}>
         <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
       </a>
-      {/* menu icon */}
+      {/* mobile menu button */}
       <button className="me-4 cursor-ponter md:hidden block z-10">
         <MenuOutline
           color="#00000"
@@ -55,13 +55,15 @@ export default function Navbar() {
       </button>
       <ul
         className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-gray dark:bg-gray-800 dark:border-gray-700",
-          [isToggle ? "-bottom-36 opacity-100" : "opacity-0 -top-40"]
+          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-50 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg md:border-0 bg-white dark:bg-gray-800 dark:border-gray-700",
+          [isMenuOpen ? "-bottom-36 opacity-100" : "opacity-0 -top-40"]
         )}
       >
         {Object.keys(routes).map((link) => (
           <NavLink
-            onClick={toggleHandler}
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
             key={link}
             to={link}
             className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "
