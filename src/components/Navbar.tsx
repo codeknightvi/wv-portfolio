@@ -20,9 +20,10 @@ export default function Navbar() {
     if (window.innerWidth < 768) {
       setIsMenuOpen(false);
     }
-    window.addEventListener("resize", () =>
-      window.innerWidth <= 960 ? setIsMenuOpen(false) : setIsMenuOpen(true)
-    );
+    window.addEventListener("resize", () => {
+      window.innerWidth <= 768 ? setIsMenuOpen(false) : setIsMenuOpen(true);
+      setListVisible(false);
+    });
   }, []);
 
   const toggleHandler = useCallback(
