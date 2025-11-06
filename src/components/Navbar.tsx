@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useContext } from "react";
+import { useEffect, useState, useCallback, useContext, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
 import { contactChannel } from "@mock-data/contact";
@@ -12,16 +12,17 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
   const toastReducer = useContext(ToastContext);
+  const isMobile = useMemo(() => window.innerWidth < 768, [window.innerWidth]);
 
   useEffect(() => {
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       setIsMenuOpen(true);
     }
-    if (window.innerWidth < 768) {
+    if (isMobile) {
       setIsMenuOpen(false);
     }
     window.addEventListener("resize", () => {
-      window.innerWidth <= 768 ? setIsMenuOpen(false) : setIsMenuOpen(true);
+      !isMobile ? setIsMenuOpen(false) : setIsMenuOpen(true);
       setListVisible(false);
     });
   }, []);
@@ -63,7 +64,9 @@ export default function Navbar() {
         {Object.keys(routes).map((link) => (
           <NavLink
             onClick={() => {
-              setIsMenuOpen(false);
+              if (isMobile) {
+                setIsMenuOpen(false);
+              }
             }}
             key={link}
             to={link}
