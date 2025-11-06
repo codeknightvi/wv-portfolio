@@ -1,1 +1,2 @@
-https://wvportfolio.netlify.app/home
+https://wvportfolio.netlify.app
+
