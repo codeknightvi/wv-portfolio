@@ -5,9 +5,9 @@ export default function Toast() {
   const toastContext = useContext(ToastContext);
 
   return (
-    <div className="toast fixed top-10 right-[50%] z-100 bg-red-500 p-5">
+    <div className="toast bg-primary border rounded-2xl border-secondary p-4 text-secondary text-center">
       <div
-        className="cursor-pointer text-primary text-right"
+        className="cursor-pointer text-right"
         onClick={() => {
           toastContext?.action.closeToast();
         }}

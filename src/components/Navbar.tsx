@@ -1,31 +1,35 @@
-import { useEffect, useState, useCallback, useContext } from "react";
+import { useEffect, useState, useCallback, useContext, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
-import { ContactChannel, contactChannel } from "@mock-data/contact";
+import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
 import { twMerge } from "tailwind-merge";
+import { ContactChannel } from "@_types";
+import { wvLogo } from "@constants/imagePath";
 
 export default function Navbar() {
-  const [isToggle, setIsToggle] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
   const toastReducer = useContext(ToastContext);
+  const isMobile = useMemo(() => window.innerWidth < 768, [window.innerWidth]);
 
   useEffect(() => {
-    if (window.innerWidth >= 768) {
-      setIsToggle(true);
+    if (!isMobile) {
+      setIsMenuOpen(true);
     }
-    if (window.innerWidth < 768) {
-      setIsToggle(false);
+    if (isMobile) {
+      setIsMenuOpen(false);
     }
-    window.addEventListener("resize", () =>
-      window.innerWidth <= 960 ? setIsToggle(false) : setIsToggle(true)
-    );
+    window.addEventListener("resize", () => {
+      !isMobile ? setIsMenuOpen(false) : setIsMenuOpen(true);
+      setListVisible(false);
+    });
   }, []);
 
   const toggleHandler = useCallback(
-    () => setIsToggle((state) => !state),
-    [setIsToggle]
+    () => setIsMenuOpen((state) => !state),
+    [setIsMenuOpen]
   );
 
   const dropdownHandler = (l: ContactChannel) => {
@@ -40,13 +44,9 @@ export default function Navbar() {
   return (
     <nav className="z-10 bg-secondary border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
-        <img
-          src="/profile/WVBrandnameStoreAI.png"
-          className="h-10 mr-3"
-          alt="WVLogo"
-        />
+        <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
       </a>
-      {/* menu icon */}
+      {/* mobile menu button */}
       <button className="me-4 cursor-ponter md:hidden block z-10">
         <MenuOutline
           color="#00000"
@@ -57,12 +57,17 @@ export default function Navbar() {
       </button>
       <ul
         className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-900 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-gray dark:bg-gray-800 dark:border-gray-700",
-          [isToggle ? "-bottom-36 opacity-100 " : "opacity-0 -top-40"]
+          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-50 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg md:border-0 bg-white dark:bg-gray-800 dark:border-gray-700",
+          [isMenuOpen ? "-bottom-36 opacity-100" : "opacity-0 -top-40"]
         )}
       >
         {Object.keys(routes).map((link) => (
           <NavLink
+            onClick={() => {
+              if (isMobile) {
+                setIsMenuOpen(false);
+              }
+            }}
             key={link}
             to={link}
             className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "

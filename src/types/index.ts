@@ -1,5 +1,32 @@
-export type GalleryType = {
+export type ContactChannel = {
   src: string;
+  via: string;
+  url?: string;
+};
+
+export type Education = { year: string; place: string };
+
+export type Experience = {
+  period: string;
+  position: string;
+  place: string;
+  work: string[];
+};
+
+export type Gallery = {
+  src: string;
+};
+
+export type GalleryPropsType = {
+  data: Gallery[];
+  id: string;
+  isVisible?: boolean;
+  ref?: Node;
+};
+
+export type Skill = {
+  name: string;
+  url: string;
 };
 
 export type Project = {
@@ -8,4 +35,13 @@ export type Project = {
   cover: string;
   stack: string[];
   description: string;
+};
+
+export type SoftwareSkill = { name: string; skills: Skill[] };
+
+export type Certificate = {
+  name: string;
+  score: number;
+  maxScroe: number;
+  date: string;
 };

@@ -1,7 +1,9 @@
-export const database = [
+import { Skill } from "@_types";
+
+export const database: Skill[] = [
   {
     name: "mysql",
-    url: "https:images.sftcdn.net/images/t_app-icon-m/p/917c77e8-96d1-11e6-8453-00163ed833e7/3780880766/mysql-com-icon.png",
+    url: "https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png",
   },
   {
     name: "postgressql",
