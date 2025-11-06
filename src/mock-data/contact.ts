@@ -1,8 +1,4 @@
-export type ContactChannel = {
-  src: string;
-  via: string;
-  url?: string;
-};
+import { ContactChannel } from "@_types";
 
 export const contactChannel: ContactChannel[] = [
   {

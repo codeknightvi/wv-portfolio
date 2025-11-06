@@ -7,14 +7,14 @@ import {
 import Experience from "@pages/WorkPage/Experience";
 import Gallery from "@pages/WorkPage/Gallery/Gallery";
 import ProjectJumper from "@pages/WorkPage/ProjectJumper";
-import RevealOnScroll from "@hooks/revealOnScroll";
+import RevealOnScroll from "@components/RevealOnScroll";
 
 export default function WorkPage() {
   return (
     <>
       <Experience />
       <ProjectJumper />
-      <div className="flex flex-col gap-y-6">
+      <div className="flex flex-col gap-y-6 items-center">
         <RevealOnScroll>
           <Gallery data={threeddesign} id="3d" />
         </RevealOnScroll>

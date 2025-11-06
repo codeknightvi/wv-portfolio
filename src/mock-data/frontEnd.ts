@@ -1,4 +1,6 @@
-export const frontEnd = [
+import { Skill } from "@_types";
+
+export const frontEnd: Skill[] = [
   {
     name: "javascript",
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
@@ -13,7 +15,7 @@ export const frontEnd = [
   },
   {
     name: "angular",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+    url: "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fo0vwd8607j64u96hyhwk.png",
   },
   {
     name: "tailwind",
@@ -32,11 +34,23 @@ export const frontEnd = [
     url: "https://repository-images.githubusercontent.com/180328715/fca49300-e7f1-11ea-9f51-cfd949b31560",
   },
   {
+    name: "jotai",
+    url: "https://cdn.candycode.com/jotai/jotai-mascot.png",
+  },
+  {
+    name: "shadcn",
+    url: "https://images.seeklogo.com/logo-png/51/2/shadcn-ui-logo-png_seeklogo-519786.png",
+  },
+  {
     name: "styled component",
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgGEKVlsejmgs0_zRZixaYcJFJHcRWPrFcUdD4mWdd3A&s",
   },
   {
     name: "MUI - react component library",
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhkZzafkx5d28BaQhalW0UqZsIkqh3s02E8oYfGgRjPw&s",
+  },
+  {
+    name: "tanstack",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUk5-6KJQnnnsBUpIyqb3wlXlM_8OU_1g2A&s",
   },
 ];

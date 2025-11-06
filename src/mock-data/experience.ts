@@ -1,4 +1,6 @@
-export const experience = [
+import { Experience } from "@_types";
+
+export const experience: Experience[] = [
   {
     period: "Jun 2024 - Apr 2025",
     position: "React Developer",
