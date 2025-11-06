@@ -3,6 +3,7 @@ export type ContactChannel = {
   via: string;
   url?: string;
 };
+
 export type Education = { year: string; place: string };
 
 export type Experience = {
@@ -37,3 +38,10 @@ export type Project = {
 };
 
 export type SoftwareSkill = { name: string; skills: Skill[] };
+
+export type Certificate = {
+  name: string;
+  score: number;
+  maxScroe: number;
+  date: string;
+};

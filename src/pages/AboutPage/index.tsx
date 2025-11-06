@@ -1,6 +1,8 @@
 import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { education } from "@mock-data/education";
 import { twMerge } from "tailwind-merge";
+import CertificateCard from "./CertificateCard";
+import { certificates } from "@mock-data/certificates";
 
 export default function AboutPage() {
   const { hoveredIndex, handleOnMouseEnter } = useHoveredPoint();
@@ -8,16 +10,33 @@ export default function AboutPage() {
   return (
     <>
       <div className="m-0 sm:m-4 p-0 sm:p-2 lg:p-10 text-base lg:text-3xl ">
-        A passionate front-end developer with the previous background in graphic
-        designing, comprehensive aspects of real estate market analysis, project
-        management for real estate development, feasibility, and facility
-        management. For extent, having good interpersonal communication,
-        professional attitude, hands-on with various software, adaptive in
-        diverse environment with willingness to grow through continuous personal
-        and professional development. Seeking for a challenging role to leverage
-        myself within a career progressive.
+        I’m a React developer with hands-on experience building and maintaining
+        decentralized finance (DeFi) trading platforms. My expertise spans
+        debugging, implementing new features, and creating high-performance,
+        user-friendly interfaces. I worked extensively with a range of modern
+        libraries—including those for charting, form handling, and state
+        management—to create high-performance, responsive, and user-friendly
+        interfaces. I collaborated in Agile Scrum environments, work closely
+        with QA, UX/UI, and backend teams to deliver clean, consistent, and
+        efficient code. Driven by curiosity and precision, I’m passionate about
+        crafting impactful digital experiences and contributing to innovative
+        projects that make technology more human-centered.
       </div>
-      <section className="">
+
+      <section className="mb-4">
+        <h1 className="text-3xl section mb-2">Certificate</h1>
+        <div className="grid grid-cols-3 gap-2">
+          {certificates.map((cer) => {
+            return cer.name !== "invalid" ? (
+              <CertificateCard key={cer.name} {...cer} />
+            ) : (
+              <div className="flex p-5 border-1 flex-col justify-center items-center"></div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section>
         <h1 className="text-3xl section">Education</h1>
         <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4">
           {education.map((edu, index) => {
