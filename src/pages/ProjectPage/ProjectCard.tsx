@@ -3,7 +3,6 @@ import { Project } from "@_types";
 export default function ProjectCard(project: Project) {
   return (
     <a
-      key={project.name}
       href={project.url}
       target="_blank"
       rel="noreferrer"

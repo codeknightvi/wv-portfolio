@@ -7,6 +7,7 @@ export type ContactChannel = {
 export type Education = { id: number; year: string; place: string };
 
 export type Experience = {
+  id: number;
   period: string;
   position: string;
   place: string;
@@ -30,6 +31,7 @@ export type Skill = {
 };
 
 export type Project = {
+  id: number;
   name: string;
   url: string;
   cover: string;

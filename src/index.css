@@ -46,10 +46,9 @@ nav {
 }
 
 @theme {
-  --spacing: 4px;
-  /* white */
-  --color-primary: #000000;
   /* black */
+  --color-primary: #000000;
+  /* white */
   --color-secondary: #ffffff;
   /* gray-500 */
   --color-tertiary: #6a7282;

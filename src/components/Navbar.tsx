@@ -89,20 +89,15 @@ export default function Navbar() {
           <button
             className="
                         relative flex justify-center items-center
-                        text-black rounded focus-ring ring-quaternary
+                        text-black rounded
                         "
             onClick={() => {
               setListVisible((prev) => !prev);
             }}
           >
-            <p
-              className="px-2 text-black transition duration-300 hover:text-tertiary"
-              onClick={() => {
-                setListVisible((prev) => !prev);
-              }}
-            >
+            <p className="px-2 text-black transition duration-300 hover:text-tertiary">
               contact
-              <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto"></span>
+              <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto" />
             </p>
             <span className="border-l hover:bg-quaternary">
               <svg

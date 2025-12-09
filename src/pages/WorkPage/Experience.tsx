@@ -3,27 +3,27 @@ import { experience } from "@mock-data/experience";
 import { twMerge } from "tailwind-merge";
 
 const Experience = () => {
-  const { hoveredIndex, handleOnMouseEnter } = useHoveredPoint();
+  const { hoveredId, handleOnMouseEnter } = useHoveredPoint();
 
   return (
     <section className="pt-5 md:pt-10">
       <h1 className="text-3xl section">Experience</h1>
       <ol className="relative border-l border-quaternary ml-4">
-        {experience.map((exp, index) => {
+        {experience.map((exp) => {
           return (
-            <li className="mb-10 ml-4" key={index}>
+            <li className="mb-10 ml-4" key={exp.id}>
               <div
-                onMouseEnter={() => handleOnMouseEnter(index)}
+                onMouseEnter={() => handleOnMouseEnter(exp.id)}
                 onMouseLeave={() => handleOnMouseEnter(null)}
                 className={twMerge(
                   "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-white",
-                  [hoveredIndex === index && "bg-primary"]
+                  [hoveredId === exp.id && "bg-primary"]
                 )}
               />
               <time
                 className={twMerge(
                   "mb-1 text-sm font-normal leading-none text-tertiary",
-                  [hoveredIndex === index && "text-primary"]
+                  [hoveredId === exp.id && "text-primary"]
                 )}
               >
                 {" "}

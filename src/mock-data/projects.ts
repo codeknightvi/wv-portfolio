@@ -2,6 +2,7 @@ import { Project } from "@_types";
 
 export const projects: Project[] = [
   {
+    id: 1,
     name: "Exerzise",
     url: "https://github.com/codeknightvi/exerzise",
     cover: "projects/exerzise.png",
@@ -12,6 +13,7 @@ export const projects: Project[] = [
     updateDate: new Date("2024-02-01").getTime(),
   },
   {
+    id: 2,
     name: "buyem",
     url: "https://buyem.pages.dev/",
     cover: "projects/buyem.png",
@@ -22,6 +24,7 @@ export const projects: Project[] = [
     updateDate: new Date("2025-12-09").getTime(),
   },
   {
+    id: 3,
     name: "pokedex starter",
     url: "https://pokedex-starter.pages.dev/",
     cover: "projects/pokedex.png",
@@ -32,6 +35,7 @@ export const projects: Project[] = [
     updateDate: new Date("2025-12-09").getTime(),
   },
   {
+    id: 4,
     name: "xyz",
     url: "https://xyz-social-media.pages.dev/",
     cover: "projects/xyz.png",
@@ -42,6 +46,7 @@ export const projects: Project[] = [
     updateDate: new Date("2025-12-09").getTime(),
   },
   {
+    id: 5,
     name: "Countdown Date Picker",
     url: "https://countdown-datepicker.pages.dev/",
     cover: "projects/datepicker.png",
@@ -52,6 +57,7 @@ export const projects: Project[] = [
     updateDate: new Date("2024-07-01").getTime(),
   },
   {
+    id: 6,
     name: "techNotes",
     url: "https://github.com/codeknightvi/technotes",
     cover: "",
@@ -60,5 +66,4 @@ export const projects: Project[] = [
     status: "coming soon",
     updateDate: new Date("2024-06-01").getTime(),
   },
-  // { name: "middle man", url: "", cover: "", description: "" },
 ];

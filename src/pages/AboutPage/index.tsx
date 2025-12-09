@@ -5,7 +5,7 @@ import CertificateCard from "./CertificateCard";
 import { certificates } from "@mock-data/certificates";
 
 export default function AboutPage() {
-  const { hoveredIndex, handleOnMouseEnter } = useHoveredPoint();
+  const { hoveredId, handleOnMouseEnter } = useHoveredPoint();
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function AboutPage() {
       <section>
         <h1 className="text-3xl section">Education</h1>
         <ol className="relative border-l border-quaternary ml-4">
-          {education.map((edu, index) => {
+          {education.map((edu) => {
             return (
               <li key={edu.year} className="mb-10 ml-4">
                 <div
@@ -45,13 +45,13 @@ export default function AboutPage() {
                   onMouseLeave={() => handleOnMouseEnter(null)}
                   className={twMerge(
                     "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-quaternary",
-                    [hoveredIndex! - 1 === index && "bg-primary"]
+                    [hoveredId === edu.id && "bg-primary"]
                   )}
                 />
                 <time
                   className={twMerge(
                     "mb-1 text-sm font-normal leading-none text-tertiary",
-                    [hoveredIndex! - 1 === index && "text-primary"]
+                    [hoveredId === edu.id && "text-primary"]
                   )}
                 >
                   {edu.year}
