@@ -7,12 +7,14 @@ import { ToastContext } from "context/toast";
 import { twMerge } from "tailwind-merge";
 import { ContactChannel } from "@_types";
 import { wvLogo } from "@constants/imagePath";
+import useWindowDimensions from "@hooks/useWindowsDimension";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [listVisivle, setListVisible] = useState(false);
   const toastReducer = useContext(ToastContext);
-  const isMobile = useMemo(() => window.innerWidth < 768, [window.innerWidth]);
+  const { width } = useWindowDimensions();
+  const isMobile = useMemo(() => width < 768, [width]);
 
   useEffect(() => {
     if (!isMobile) {
@@ -21,11 +23,7 @@ export default function Navbar() {
     if (isMobile) {
       setIsMenuOpen(false);
     }
-    window.addEventListener("resize", () => {
-      !isMobile ? setIsMenuOpen(false) : setIsMenuOpen(true);
-      setListVisible(false);
-    });
-  }, []);
+  }, [isMobile]);
 
   const toggleHandler = useCallback(
     () => setIsMenuOpen((state) => !state),
@@ -42,7 +40,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="z-10 bg-secondary border-solid border-2 border-gray-200 dark:bg-gray-900 w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-secondary border-solid border-2 border-quaternary dark:bg-tertiary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
         <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
       </a>
@@ -57,8 +55,8 @@ export default function Navbar() {
       </button>
       <ul
         className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-gray-50 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg md:border-0 bg-white dark:bg-gray-800 dark:border-gray-700",
-          [isMenuOpen ? "-bottom-36 opacity-100" : "opacity-0 -top-40"]
+          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-quaternary md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0 bg-white dark:bg-tertiary dark:border-tertiary",
+          [isMenuOpen ? "-bottom-43 opacity-100" : "opacity-0 -top-100"]
         )}
       >
         {Object.keys(routes).map((link) => (
@@ -70,7 +68,7 @@ export default function Navbar() {
             }}
             key={link}
             to={link}
-            className="group text-secondary transition duration-300 hover:text-gray-400 z-10 "
+            className="group text-secondary transition duration-300 hover:text-tertiary z-10 "
             style={({ isActive, isPending, isTransitioning }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -88,14 +86,14 @@ export default function Navbar() {
           <button
             className="
                         relative flex justify-center items-center
-                        text-black rounded focus-ring ring-gray-200
+                        text-black rounded focus-ring ring-quaternary
                         "
             onClick={() => {
               setListVisible((prev) => !prev);
             }}
           >
             <p
-              className="px-2 group text-black transition duration-300 hover:text-gray-400 "
+              className="px-2 group text-black transition duration-300 hover:text-tertiary "
               onClick={() => {
                 setListVisible((prev) => !prev);
               }}
@@ -103,7 +101,7 @@ export default function Navbar() {
               contact
               <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
             </p>
-            <span className="border-l hover:bg-gray-100  ">
+            <span className="border-l hover:bg-quaternary  ">
               <svg
                 className="w-2.5 h-2.5 ml-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +128,7 @@ export default function Navbar() {
               <ul className="text-left border rounded-sm">
                 {contactChannel.map((link, index) => (
                   <li
-                    className="px-4 py-1 hover:bg-gray-100 border-b z-10"
+                    className="px-4 py-1 hover:bg-quaternary border-b z-10"
                     key={index}
                   >
                     <div

@@ -1,10 +1,13 @@
 import { projects } from "@mock-data/projects";
-import ProjectCards from "@pages/ProjectPage/ProjectCards";
+import ProjectCard from "@pages/ProjectPage/ProjectCard";
+import { Project } from "@_types";
 
 export default function ProjectPage() {
   return (
-    <>
-      <ProjectCards projects={projects} />
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4">
+      {projects.map((project: Project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
   );
 }

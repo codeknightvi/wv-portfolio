@@ -8,7 +8,7 @@ const Experience = () => {
   return (
     <section className="pt-5 md:pt-10">
       <h1 className="text-3xl section">Experience</h1>
-      <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4">
+      <ol className="relative border-l border-quaternary dark:border-tertiary ml-4">
         {experience.map((exp, index) => {
           return (
             <li className="mb-10 ml-4" key={index}>
@@ -16,20 +16,20 @@ const Experience = () => {
                 onMouseEnter={() => handleOnMouseEnter(index)}
                 onMouseLeave={() => handleOnMouseEnter(null)}
                 className={twMerge(
-                  "absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700",
+                  "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-white dark:border-tertiary dark:bg-tertiary",
                   [hoveredIndex === index && "bg-secondary"]
                 )}
               />
               <time
                 className={twMerge(
-                  "mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500",
+                  "mb-1 text-sm font-normal leading-none text-tertiary dark:text-tertiary",
                   [hoveredIndex === index && "text-secondary"]
                 )}
               >
                 {" "}
                 {exp.period}
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-primary">
+              <h3 className="text-lg font-semibold text-tertiary dark:text-primary">
                 {exp.position} | @ {exp.place}
               </h3>
               <ul>

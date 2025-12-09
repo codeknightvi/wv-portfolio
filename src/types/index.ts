@@ -4,7 +4,7 @@ export type ContactChannel = {
   url?: string;
 };
 
-export type Education = { year: string; place: string };
+export type Education = { id: number; year: string; place: string };
 
 export type Experience = {
   period: string;
@@ -35,6 +35,8 @@ export type Project = {
   cover: string;
   stack: string[];
   description: string;
+  status: "coming soon" | "under maintenance" | "available";
+  updateDate: number;
 };
 
 export type SoftwareSkill = { name: string; skills: Skill[] };
