@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 export function useHoveredPoint() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const handleOnMouseEnter = (index: number | null) => {
     if (index !== null && typeof index === "number") {
-      setHoveredIndex(index);
+      setHoveredId(index);
     } else {
-      setHoveredIndex(null);
+      setHoveredId(null);
     }
   };
 
   return {
-    hoveredIndex,
+    hoveredId,
     handleOnMouseEnter,
   };
 }
