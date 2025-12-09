@@ -7,13 +7,13 @@ export default function ProjectCard(project: Project) {
       href={project.url}
       target="_blank"
       rel="noreferrer"
-      className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center bg-white border border-quaternary rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-quinary dark:border-tertiary dark:bg--800 dark:hover:bg-tertiary"
+      className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center bg-secondary border border-quaternary rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-quinary"
     >
       <div className="flex flex-col items-center justify-between h-full w-full">
-        <div className="flex flex-col items-center mb-2 text-xl md:text-2xl font-bold tracking-tight text-secondary dark:text-primary">
+        <div className="flex flex-col items-center mb-2 text-xl md:text-2xl font-bold tracking-tight">
           {project.name}
           {project.status === "under maintenance" ? (
-            <div className="text-xs font-bold tracking-tight text-quaternary dark:text-secondary">
+            <div className="text-xs font-bold tracking-tight text-tertiary">
               (under maintenance)
             </div>
           ) : (
@@ -31,7 +31,7 @@ export default function ProjectCard(project: Project) {
           )}
 
           <div className="flex flex-col p-4 leading-normal">
-            <p className="font-normal text-tertiary dark:text-tertiary">
+            <p className="font-normal">
               {project.status === "coming soon"
                 ? "coming soon ..."
                 : project.description}

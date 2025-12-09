@@ -22,7 +22,6 @@ export default function AboutPage() {
         crafting impactful digital experiences and contributing to innovative
         projects that make technology more human-centered.
       </div>
-
       <section className="mb-4">
         <h1 className="text-3xl section mb-2">Certificate</h1>
         <div className="grid grid-cols-3 gap-2">
@@ -35,10 +34,9 @@ export default function AboutPage() {
           })}
         </div>
       </section>
-
       <section>
         <h1 className="text-3xl section">Education</h1>
-        <ol className="relative border-l border-quaternary dark:border-tertiary ml-4">
+        <ol className="relative border-l border-quaternary ml-4">
           {education.map((edu, index) => {
             return (
               <li key={edu.year} className="mb-10 ml-4">
@@ -46,19 +44,19 @@ export default function AboutPage() {
                   onMouseEnter={() => handleOnMouseEnter(edu.id)}
                   onMouseLeave={() => handleOnMouseEnter(null)}
                   className={twMerge(
-                    "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-primary dark:border-tertiary dark:bg-tertiary",
-                    [hoveredIndex === index && "bg-secondary"]
+                    "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-quaternary",
+                    [hoveredIndex! - 1 === index && "bg-primary"]
                   )}
                 />
                 <time
                   className={twMerge(
-                    "mb-1 text-sm font-normal leading-none text-quaternary dark:text-tertiary",
-                    [hoveredIndex === index && "text-secondary"]
+                    "mb-1 text-sm font-normal leading-none text-tertiary",
+                    [hoveredIndex! - 1 === index && "text-primary"]
                   )}
                 >
                   {edu.year}
                 </time>
-                <h3 className="text-lg font-semibold text-tertiary dark:text-primary">
+                <h3 className="text-lg font-semibold text-primary">
                   {edu.place}
                 </h3>
               </li>

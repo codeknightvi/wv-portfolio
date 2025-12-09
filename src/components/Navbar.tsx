@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useContext, useMemo } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { MenuOutline } from "react-ionicons";
 import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
@@ -10,24 +10,27 @@ import { wvLogo } from "@constants/imagePath";
 import useWindowDimensions from "@hooks/useWindowsDimension";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [listVisivle, setListVisible] = useState(false);
   const toastReducer = useContext(ToastContext);
   const { width } = useWindowDimensions();
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [listVisivle, setListVisible] = useState(false);
   const isMobile = useMemo(() => width < 768, [width]);
 
   useEffect(() => {
     if (!isMobile) {
       setIsMenuOpen(true);
+      setListVisible(false);
     }
     if (isMobile) {
       setIsMenuOpen(false);
+      setListVisible(false);
     }
-  }, [isMobile]);
+  }, [isMobile, location]);
 
   const toggleHandler = useCallback(
     () => setIsMenuOpen((state) => !state),
-    [setIsMenuOpen]
+    [isMenuOpen]
   );
 
   const dropdownHandler = (l: ContactChannel) => {
@@ -40,7 +43,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="z-10 bg-secondary border-solid border-2 border-quaternary dark:bg-tertiary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-secondary border-b-2 border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
         <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
       </a>
@@ -55,7 +58,7 @@ export default function Navbar() {
       </button>
       <ul
         className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:dark:bg-quaternary md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0 bg-white dark:bg-tertiary dark:border-tertiary",
+          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0 bg-secondary",
           [isMenuOpen ? "-bottom-43 opacity-100" : "opacity-0 -top-100"]
         )}
       >
@@ -68,7 +71,7 @@ export default function Navbar() {
             }}
             key={link}
             to={link}
-            className="group text-secondary transition duration-300 hover:text-tertiary z-10 "
+            className="transition duration-300 hover:text-tertiary z-10 "
             style={({ isActive, isPending, isTransitioning }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -78,11 +81,11 @@ export default function Navbar() {
             }}
           >
             <li className="px-2">{link}</li>
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
+            <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto"></span>
           </NavLink>
         ))}
         {/* dropdown */}
-        <li className="relative flex justify-center items-center z-2 ">
+        <li className="relative flex justify-center items-center z-2">
           <button
             className="
                         relative flex justify-center items-center
@@ -93,15 +96,15 @@ export default function Navbar() {
             }}
           >
             <p
-              className="px-2 group text-black transition duration-300 hover:text-tertiary "
+              className="px-2 text-black transition duration-300 hover:text-tertiary"
               onClick={() => {
                 setListVisible((prev) => !prev);
               }}
             >
               contact
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black m-auto"></span>
+              <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto"></span>
             </p>
-            <span className="border-l hover:bg-quaternary  ">
+            <span className="border-l hover:bg-quaternary">
               <svg
                 className="w-2.5 h-2.5 ml-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +124,7 @@ export default function Navbar() {
             {/* contact */}
             <div
               className={twMerge(
-                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-white",
+                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-secondary",
                 [!listVisivle ? "invisible" : "visible"]
               )}
             >
