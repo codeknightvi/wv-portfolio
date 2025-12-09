@@ -2,6 +2,7 @@ import { Experience } from "@_types";
 
 export const experience: Experience[] = [
   {
+    id: 1,
     period: "Jun 2024 - Apr 2025",
     position: "React Developer",
     place: "100x Co.,Ltd.",
@@ -14,6 +15,7 @@ export const experience: Experience[] = [
     ],
   },
   {
+    id: 2,
     period: "Sep 2022 - Dec 2022",
     position: "Graphic Designer",
     place: "Sabuy Technology Co.,ltd - Sabuy Digital",
@@ -26,6 +28,7 @@ export const experience: Experience[] = [
     ],
   },
   {
+    id: 3,
     period: "Jun 2021 - Aug 2021",
     position: "Intern",
     place: "Auros Company Limited - Land Analysis and Development Consultant",

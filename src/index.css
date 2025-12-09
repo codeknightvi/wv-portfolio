@@ -1,12 +1,5 @@
 @import "tailwindcss";
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -53,10 +46,16 @@ nav {
 }
 
 @theme {
-  --color-primary: #ffffff;
-  --color-secondary: #000000;
-  --color-tertiary: #000000;
-  --color-quaternary: #000000;
+  /* black */
+  --color-primary: #000000;
+  /* white */
+  --color-secondary: #ffffff;
+  /* gray-500 */
+  --color-tertiary: #6a7282;
+  /* gray-200 */
+  --color-quaternary: #e5e7eb;
+  /* gray-100 */
+  --color-quinary: #f7fafc;
 }
 
 .toast {
