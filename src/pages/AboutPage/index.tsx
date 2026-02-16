@@ -10,17 +10,13 @@ export default function AboutPage() {
   return (
     <>
       <div className="m-0 sm:m-4 p-2 sm:p-0 lg:p-10 text-base lg:text-3xl ">
-        I’m a React developer with hands-on experience building and maintaining
-        decentralized finance (DeFi) trading platforms. My expertise spans
-        debugging, implementing new features, and creating high-performance,
-        user-friendly interfaces. I worked extensively with a range of modern
-        libraries—including those for charting, form handling, and state
-        management—to create high-performance, responsive, and user-friendly
-        interfaces. I collaborated in Agile Scrum environments, work closely
-        with QA, UX/UI, and backend teams to deliver clean, consistent, and
-        efficient code. Driven by curiosity and precision, I’m passionate about
-        crafting impactful digital experiences and contributing to innovative
-        projects that make technology more human-centered.
+        Frontend Software Engineer focused on React, Next.js, and TypeScript,
+        building scalable, high-performance web applications. Experienced in
+        real-time interfaces, data-driven dashboards, and structured business
+        workflows across trading and enterprise systems. Strong in state
+        management, API integration, and clean, maintainable architecture.
+        Committed to delivering reliable, production-ready solutions in Agile
+        environments.
       </div>
       <section className="mb-4">
         <h1 className="text-3xl section mb-2">Certificate</h1>
