@@ -22,10 +22,10 @@ export default function AboutPage() {
         <h1 className="text-3xl section mb-2">Certificate</h1>
         <div className="grid grid-cols-3 gap-2">
           {certificates.map((cer) => {
-            return cer.name !== "invalid" ? (
-              <CertificateCard key={cer.name} {...cer} />
-            ) : (
+            return cer.name === "invalid" ? (
               <div className="flex p-5 border-1 flex-col justify-center items-center" />
+            ) : (
+              <CertificateCard key={cer.name} {...cer} />
             );
           })}
         </div>
