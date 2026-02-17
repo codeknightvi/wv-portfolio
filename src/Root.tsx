@@ -3,6 +3,7 @@ import Toast from "@components/Toast";
 import { ToastProvider, ToastContext } from "context/toast";
 import { useContext } from "react";
 import Navbar from "@components/Navbar";
+import { TooltipProvider } from "@components/ui/tooltip";
 
 function Layout() {
   const toastContext = useContext(ToastContext);
@@ -20,8 +21,10 @@ function Layout() {
 
 export default function Root() {
   return (
-    <ToastProvider>
-      <Layout />
-    </ToastProvider>
+    <TooltipProvider>
+      <ToastProvider>
+        <Layout />
+      </ToastProvider>
+    </TooltipProvider>
   );
 }

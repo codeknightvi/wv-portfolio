@@ -33,8 +33,8 @@ const Experience = () => {
                 {exp.position} | @ {exp.place}
               </h3>
               <ul>
-                {exp.work.map((w, index) => (
-                  <li key={index}>- {w}</li>
+                {exp.work.map((w) => (
+                  <li key={w}>- {w}</li>
                 ))}
               </ul>
             </li>

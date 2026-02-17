@@ -11,18 +11,14 @@
 }
 
 :root {
-  /* padding: 10px; */
   background-color: white;
   overflow-x: hidden;
   line-height: 1.5;
   color-scheme: light dark;
-  /* font-weight: 400; */
-  /* color: rgba(255, 255, 255, 0.87); */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 }
 
 * {

@@ -11,19 +11,17 @@ export default function ProjectCard(project: Project) {
       <div className="flex flex-col items-center justify-between h-full w-full">
         <div className="flex flex-col items-center mb-2 text-xl md:text-2xl font-bold tracking-tight">
           {project.name}
-          {project.status === "under maintenance" ? (
+          {project.status === "under maintenance" && (
             <div className="text-xs font-bold tracking-tight text-tertiary">
               (under maintenance)
             </div>
-          ) : (
-            ""
           )}
         </div>
 
         <div className="flex flex-col md:flex-row items-center">
           {project.status !== "coming soon" && (
             <img
-              className="object-cover md:object-contain w-full rounded-t-lg h-52 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg "
+              className="object-cover md:object-contain w-full rounded-t-lg h-52 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
               src={project.cover}
               alt="landing_page_img"
             />
@@ -37,10 +35,11 @@ export default function ProjectCard(project: Project) {
             </p>
           </div>
         </div>
+
         <div className="box my-4">
           <u>stack:</u>{" "}
-          {project.stack.map((el, index) => (
-            <span className="mr-2" key={index}>
+          {project.stack.map((el) => (
+            <span className="mr-2" key={el}>
               {el}
             </span>
           ))}

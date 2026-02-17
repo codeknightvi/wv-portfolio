@@ -10,8 +10,12 @@ export const frontEnd: Skill[] = [
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
   },
   {
-    name: "react",
+    name: "reactjs",
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+  },
+  {
+    name: "nextjs",
+    url: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
   },
   {
     name: "redux",
