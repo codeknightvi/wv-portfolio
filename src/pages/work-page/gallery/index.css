@@ -1,5 +1,4 @@
 .container {
-  /* width: 1000px; */
   display: flex;
   justify-content: center;
   position: relative;
@@ -25,7 +24,6 @@
   object-fit: cover;
   width: 100px;
   height: 100%;
-  /* transform: scale(2); */
   overflow: hidden;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

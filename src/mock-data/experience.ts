@@ -3,7 +3,7 @@ import { Experience } from "@_types";
 export const experience: Experience[] = [
   {
     id: 1,
-    period: "Jan 2026 - Present · 2 mos",
+    period: "Jan 2026 - Present · 2 mon",
     position: "Frontend Developer",
     place: "PTT Digital Solutions Company Limited",
     work: [
@@ -20,7 +20,7 @@ export const experience: Experience[] = [
   },
   {
     id: 2,
-    period: "Jun 2024 - Apr 2025 · 11 mos",
+    period: "Jun 2024 - Apr 2025 · 11 mon",
     position: "React Developer",
     place: "100x",
     work: [
@@ -38,7 +38,7 @@ export const experience: Experience[] = [
   },
   {
     id: 3,
-    period: "Sep 2022 - Dec 2022",
+    period: "Sep 2022 - Dec 2022 · 3 mon",
     position: "Graphic Designer",
     place: "Sabuy Technology Co.,ltd - Sabuy Digital",
     work: [
@@ -51,7 +51,7 @@ export const experience: Experience[] = [
   },
   {
     id: 4,
-    period: "Jun 2021 - Aug 2021",
+    period: "Jun 2021 - Aug 2021 · 3 mon",
     position: "Intern",
     place: "Auros Company Limited - Land Analysis and Development Consultant",
     work: [

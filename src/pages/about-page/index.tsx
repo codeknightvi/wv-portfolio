@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-3 gap-2">
           {certificates.map((cer) => {
             return cer.name === "invalid" ? (
-              <div className="flex p-5 border-1 flex-col justify-center items-center" />
+              <div className="flex p-5 border flex-col justify-center items-center" />
             ) : (
               <CertificateCard key={cer.name} {...cer} />
             );
