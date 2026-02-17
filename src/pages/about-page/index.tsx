@@ -36,7 +36,7 @@ export default function AboutPage() {
           {education.map((edu) => {
             return (
               <li key={edu.year} className="mb-10 ml-4">
-                <div
+                <button
                   onMouseEnter={() => handleOnMouseEnter(edu.id)}
                   onMouseLeave={() => handleOnMouseEnter(null)}
                   className={twMerge(
