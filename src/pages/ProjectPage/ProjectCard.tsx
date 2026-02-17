@@ -1,6 +1,6 @@
 import { Project } from "@_types";
 
-export default function ProjectCard(project: Project) {
+export default function ProjectCard(project: Readonly<Project>) {
   return (
     <a
       href={project.url}
