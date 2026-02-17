@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 type TypeWriterProps = { text: string; delay: number };
 
-export default function TypeWriter({ text, delay }: TypeWriterProps) {
+export default function TypeWriter({ text, delay }: Readonly<TypeWriterProps>) {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [linkVisible, setLinkVisivle] = useState(false);
+  const [linkVisible, setLinkVisible] = useState(false);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -18,7 +18,7 @@ export default function TypeWriter({ text, delay }: TypeWriterProps) {
       };
     }
     if (currentIndex === text.length) {
-      setLinkVisivle(true);
+      setLinkVisible(true);
     }
   }, [currentIndex, delay, text]);
 

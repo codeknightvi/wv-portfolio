@@ -2,7 +2,7 @@ import "./index.css";
 import { MouseEvent, useRef, useState } from "react";
 import { GalleryPropsType } from "@_types";
 
-export default function Gallery({ data, id }: GalleryPropsType) {
+export default function Gallery({ data, id }: Readonly<GalleryPropsType>) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -39,7 +39,7 @@ export default function Gallery({ data, id }: GalleryPropsType) {
       <div className="gallery">
         {data.map((el) => (
           <div className="gallery-item cursor-pointer" key={el.src}>
-            <img src={el.src} alt="image" />
+            <img src={el.src} alt={`img-${el.src}`} />
           </div>
         ))}
       </div>

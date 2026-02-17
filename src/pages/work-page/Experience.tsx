@@ -1,6 +1,6 @@
 import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { experience } from "@mock-data/experience";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@utils/cn";
 
 const Experience = () => {
   const { hoveredId, handleOnMouseEnter } = useHoveredPoint();
@@ -12,16 +12,17 @@ const Experience = () => {
         {experience.map((exp) => {
           return (
             <li className="mb-10 ml-4" key={exp.id}>
-              <div
+              <button
+                aria-label={`Timeline point for ${exp.id}`}
                 onMouseEnter={() => handleOnMouseEnter(exp.id)}
                 onMouseLeave={() => handleOnMouseEnter(null)}
-                className={twMerge(
+                className={cn(
                   "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-white",
                   [hoveredId === exp.id && "bg-primary"]
                 )}
               />
               <time
-                className={twMerge(
+                className={cn(
                   "mb-1 text-sm font-normal leading-none text-tertiary",
                   [hoveredId === exp.id && "text-primary"]
                 )}
@@ -33,8 +34,8 @@ const Experience = () => {
                 {exp.position} | @ {exp.place}
               </h3>
               <ul>
-                {exp.work.map((w, index) => (
-                  <li key={index}>- {w}</li>
+                {exp.work.map((w) => (
+                  <li key={w}>- {w}</li>
                 ))}
               </ul>
             </li>

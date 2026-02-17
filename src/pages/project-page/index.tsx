@@ -1,5 +1,5 @@
 import { projects } from "@mock-data/projects";
-import ProjectCard from "@pages/ProjectPage/ProjectCard";
+import ProjectCard from "@pages/project-page/ProjectCard";
 import { Project } from "@_types";
 
 export default function ProjectPage() {

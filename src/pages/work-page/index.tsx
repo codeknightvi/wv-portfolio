@@ -4,9 +4,9 @@ import {
   threeddesign,
   threeddesign2,
 } from "../../../public/Design/TU_work";
-import Experience from "@pages/WorkPage/Experience";
-import Gallery from "@pages/WorkPage/Gallery/Gallery";
-import ProjectJumper from "@pages/WorkPage/ProjectJumper";
+import Experience from "@pages/work-page/Experience";
+import Gallery from "@pages/work-page/gallery/Gallery";
+import ProjectJumper from "@pages/work-page/ProjectJumper";
 import RevealOnScroll from "@components/RevealOnScroll";
 
 export default function WorkPage() {
