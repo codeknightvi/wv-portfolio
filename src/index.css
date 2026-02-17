@@ -56,8 +56,7 @@ nav {
 
 .toast {
   z-index: 100;
-  min-width: 300px;
-  width: 20%;
+  min-width: 200px;
   position: fixed;
   top: 90px;
   left: 50%;
