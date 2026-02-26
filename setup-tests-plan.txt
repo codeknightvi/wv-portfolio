@@ -1,0 +1,51 @@
+Test Coverage Plan:
+==================
+
+1. src/hooks/useWindowsDimension.tsx (NEW - High Priority)
+   - Test initial window dimensions capture
+   - Test resize event listener registration
+   - Test cleanup on unmount
+   - Test dimension updates on resize
+   - Edge cases: rapid resizes, extreme dimensions
+
+2. src/pages/ProjectPage/ProjectCard.tsx (NEW - High Priority)
+   - Test rendering with all project statuses
+   - Test external link attributes
+   - Test "coming soon" projects (no image)
+   - Test "under maintenance" badge display
+   - Test stack rendering
+   - Test accessibility attributes
+
+3. src/components/Navbar.tsx (Modified - High Priority)
+   - Test responsive behavior (mobile/desktop)
+   - Test menu toggle functionality
+   - Test dropdown contact menu
+   - Test clipboard copy functionality
+   - Test navigation links
+   - Test window resize behavior integration
+
+4. src/pages/AboutPage/CertificateCard.tsx (Modified)
+   - Test certificate rendering
+   - Test score display
+   - Test date formatting
+
+5. src/pages/AboutPage/index.tsx (Modified)
+   - Test certificate grid rendering
+   - Test education timeline
+   - Test hover states
+   - Test invalid certificate handling
+
+6. src/pages/ProjectPage/index.tsx (Modified)
+   - Test projects grid rendering
+   - Test ProjectCard integration
+
+7. src/pages/WorkPage/Experience.tsx (Modified)
+   - Test experience timeline rendering
+   - Test hover interactions
+
+8. Data/Type files (Lower Priority - Validation tests)
+   - src/types/index.ts: Schema validation
+   - src/mock-data/education.ts: Data structure validation
+   - src/mock-data/frontEnd.ts: Data structure validation
+   - src/mock-data/projects.ts: Data structure validation
+   - src/constants/imagePath.ts: Constants validation
