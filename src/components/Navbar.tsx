@@ -14,7 +14,7 @@ export default function Navbar() {
   const { width } = useWindowDimensions();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [listVisivle, setListVisible] = useState(false);
+  const [listVisible, setListVisible] = useState(false);
   const isMobile = useMemo(() => width < 768, [width]);
 
   useEffect(() => {
@@ -34,12 +34,13 @@ export default function Navbar() {
   );
 
   const dropdownHandler = (l: ContactChannel) => {
-    if (!l.url) {
+    if (l.url) {
+      window.open(l.url, "_blank");
+    } else {
       navigator.clipboard.writeText(l.via);
       toastReducer?.action.openToast();
       toastReducer?.action.setToastMessage(l.via);
-      return;
-    } else window.open(l.url, "_blank");
+    }
   };
 
   return (
@@ -120,22 +121,22 @@ export default function Navbar() {
             <div
               className={twMerge(
                 "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-secondary",
-                [!listVisivle ? "invisible" : "visible"]
+                [listVisible ? "visible" : "invisible"]
               )}
             >
               <ul className="text-left border rounded-sm">
-                {contactChannel.map((link, index) => (
+                {contactChannel.map((link) => (
                   <li
                     className="px-4 py-1 hover:bg-quaternary border-b z-10"
-                    key={index}
+                    key={link.via}
                   >
-                    <div
+                    <button
                       onClick={() => {
                         dropdownHandler(link);
                       }}
                     >
                       {link.src}: {link.via}
-                    </div>
+                    </button>
                   </li>
                 ))}
               </ul>

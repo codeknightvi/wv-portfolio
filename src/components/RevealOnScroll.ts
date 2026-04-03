@@ -1,12 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import {
+  createElement,
+  MutableRefObject,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-export default function RevealOnScroll({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RevealOnScroll({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
-  const ref: React.MutableRefObject<null> = useRef(null);
+  const ref: MutableRefObject<null> = useRef(null);
 
   useEffect(() => {
     const scrollObserver = new IntersectionObserver(([entry]) => {
@@ -30,7 +33,7 @@ export default function RevealOnScroll({
     isVisible ? "opacity-100" : "opacity-0"
   }`;
 
-  return React.createElement("div", {
+  return createElement("div", {
     ref: ref,
     className: classes,
     children: children,
