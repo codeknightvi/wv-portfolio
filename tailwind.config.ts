@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"], // IMPORTANT
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
@@ -16,7 +16,7 @@ const config: Config = {
         "secondary-foreground": "var(--secondary-foreground)",
 
         border: "var(--border)",
-        ring: "var(--ring)",
+        ring: "var(--ring, var(--border))",
       },
     },
   },

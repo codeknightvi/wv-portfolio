@@ -44,7 +44,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="z-10 bg-white border-b-2 border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-primary border-b border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
         <img src={WV_LOGO} className="h-10 mr-3 rounded-full" alt="WVLogo" />
       </a>
@@ -97,7 +97,6 @@ export default function Navbar() {
           >
             <p className="px-2 text-black transition duration-300 hover:text-tertiary">
               contact
-              {/* <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto" /> */}
             </p>
             <span className="border-l hover:bg-quaternary">
               <svg
