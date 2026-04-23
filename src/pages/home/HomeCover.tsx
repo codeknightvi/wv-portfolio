@@ -20,7 +20,11 @@ const HomeCover = () => {
           </p>
         </div>
         <div>
-          <img className="max-h-screen" src={WV_BACKGROUND} alt="profilepic" />
+          <img
+            className="max-h-screen"
+            src={WV_BACKGROUND}
+            alt="Portrait Profile Pic"
+          />
         </div>
       </div>
     </div>

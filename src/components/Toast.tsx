@@ -9,6 +9,7 @@ export default function Toast() {
       <button
         className="cursor-pointer text-right"
         onClick={() => toastReducer?.action.closeToast()}
+        aria-label="Close"
       >
         X
       </button>

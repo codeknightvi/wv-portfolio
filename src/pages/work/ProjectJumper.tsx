@@ -4,11 +4,8 @@ const ProjectJumper = () => {
     { id: "#3d2" },
     { id: "#render" },
     { id: "#render2" },
-    // { id: "#banner" },
-    // // { id: "#game" },
-    // { id: "#urban planning" },
-    // { id: "#etc" },
   ];
+
   return (
     <div className="flex flex-col w-full items-center">
       <h1 className="m-auto text-3xl my-10">to...</h1>
