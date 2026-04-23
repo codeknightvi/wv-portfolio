@@ -3,11 +3,11 @@ import {
   rendered2,
   threeddesign,
   threeddesign2,
-} from "../../../public/Design/TU_work";
-import Experience from "@pages/work-page/Experience";
-import Gallery from "@pages/work-page/gallery/Gallery";
-import ProjectJumper from "@pages/work-page/ProjectJumper";
-import RevealOnScroll from "@components/RevealOnScroll";
+} from "../../../public/design/tu-work";
+import Experience from "@pages/work/Experience";
+import Gallery from "@pages/work/gallery/Gallery";
+import ProjectJumper from "@pages/work/ProjectJumper";
+import RevealOnScroll from "@hooks/useRevealOnScroll";
 
 export default function WorkPage() {
   return (

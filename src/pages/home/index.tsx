@@ -1,5 +1,5 @@
-import HomeCover from "@pages/home-page/HomeCover";
-import Skills from "@pages/home-page/Skills";
+import HomeCover from "@pages/home/HomeCover";
+import Skills from "@pages/home/Skills";
 
 export default function HomePage() {
   return (

@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import WorkPage from "@pages/work-page";
-import ProjectPage from "@pages/project-page";
-import HomePage from "@pages/home-page";
+import WorkPage from "@pages/work";
+import ProjectPage from "@pages/projects";
+import HomePage from "@pages/home";
 import Root from "./Root";
-import AboutPage from "@pages/about-page";
-import LandingPage from "@pages/landing-page";
+import AboutPage from "@pages/about";
+import LandingPage from "@pages/landing";
 import { routes } from "@config/routes";
 
 const router = createBrowserRouter([
@@ -28,5 +28,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

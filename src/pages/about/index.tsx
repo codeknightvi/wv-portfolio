@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="m-0 sm:m-4 p-2 sm:p-0 lg:p-10 text-base lg:text-3xl ">
-        Frontend Software Engineer focused on React, Next.js, and TypeScript,
+        Frontend Developer focused on React, Next.js, and TypeScript,
         building scalable, high-performance web applications. Experienced in
         real-time interfaces, data-driven dashboards, and structured business
         workflows across trading and enterprise systems. Strong in state
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 >
                   {edu.year}
                 </time>
-                <h3 className="text-lg font-semibold text-primary">
+                <h3 className="text-lg font-semibold">
                   {edu.place}
                 </h3>
               </li>

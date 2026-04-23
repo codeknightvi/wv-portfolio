@@ -18,13 +18,13 @@ const Experience = () => {
                 onMouseLeave={() => handleOnMouseEnter(null)}
                 className={cn(
                   "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-white",
-                  [hoveredId === exp.id && "bg-primary"]
+                  [hoveredId === exp.id && "bg-primary"],
                 )}
               />
               <time
                 className={cn(
                   "mb-1 text-sm font-normal leading-none text-tertiary",
-                  [hoveredId === exp.id && "text-primary"]
+                  [hoveredId === exp.id && "text-primary"],
                 )}
               >
                 {" "}
