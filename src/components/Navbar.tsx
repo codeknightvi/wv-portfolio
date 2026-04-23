@@ -6,8 +6,8 @@ import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
 import { twMerge } from "tailwind-merge";
 import { ContactChannel } from "@_types";
-import { wvLogo } from "@constants/imagePath";
-import useWindowDimensions from "@hooks/useWindowsDimension";
+import { WV_LOGO } from "@config/assets";
+import useWindowDimensions from "@hooks/useWindowDimension";
 
 export default function Navbar() {
   const toastReducer = useContext(ToastContext);
@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const toggleHandler = useCallback(
     () => setIsMenuOpen((state) => !state),
-    [isMenuOpen]
+    [isMenuOpen],
   );
 
   const dropdownHandler = (l: ContactChannel) => {
@@ -44,11 +44,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="z-10 bg-secondary border-b-2 border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
+    <nav className="z-10 bg-white border-b-2 border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
       <a href={routes.home.path}>
-        <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
+        <img src={WV_LOGO} className="h-10 mr-3 rounded-full" alt="WVLogo" />
       </a>
-      {/* mobile menu button */}
       <button className="me-4 cursor-ponter md:hidden block z-10">
         <MenuOutline
           color="#00000"
@@ -59,8 +58,8 @@ export default function Navbar() {
       </button>
       <ul
         className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0 bg-secondary",
-          [isMenuOpen ? "-bottom-43 opacity-100" : "opacity-0 -top-100"]
+          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0",
+          [isMenuOpen ? "-bottom-43 opacity-100" : "opacity-0 -top-100"],
         )}
       >
         {Object.keys(routes).map((link) => (
@@ -72,7 +71,7 @@ export default function Navbar() {
             }}
             key={link}
             to={link}
-            className="transition duration-300 hover:text-tertiary z-10 "
+            className="transition duration-300 hover:text-tertiary z-10 text-black bg-white"
             style={({ isActive, isPending, isTransitioning }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -82,11 +81,11 @@ export default function Navbar() {
             }}
           >
             <li className="px-2">{link}</li>
-            <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto"></span>
+            <span className="block max-w-0 duration-500 h-0.5 m-auto"></span>
           </NavLink>
         ))}
         {/* dropdown */}
-        <li className="relative flex justify-center items-center z-2">
+        <li className="relative flex justify-center items-center z-2 bg-white">
           <button
             className="
                         relative flex justify-center items-center
@@ -98,7 +97,7 @@ export default function Navbar() {
           >
             <p className="px-2 text-black transition duration-300 hover:text-tertiary">
               contact
-              <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto" />
+              {/* <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto" /> */}
             </p>
             <span className="border-l hover:bg-quaternary">
               <svg
@@ -120,8 +119,8 @@ export default function Navbar() {
             {/* contact */}
             <div
               className={twMerge(
-                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-secondary",
-                [listVisible ? "visible" : "invisible"]
+                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-white",
+                [listVisible ? "visible" : "invisible"],
               )}
             >
               <ul className="text-left border rounded-sm">

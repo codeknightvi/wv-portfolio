@@ -1,57 +1,79 @@
 @import "tailwindcss";
 
+
+:root {
+  color-scheme: light dark;
+
+  --background: #ffffff;
+  --foreground: #000000;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+
+  --secondary: #000000;
+  --secondary-foreground: #ffffff;
+
+  --border: #000000;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+
+  --border: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-border: var(--border);
+}
+
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
   *,
-  ::after,
   ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  ::after {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+
+  nav {
+    height: 100px;
+    background-color: var(--white);
+    color: var(--black);
   }
 }
 
-:root {
-  background-color: white;
-  overflow-x: hidden;
-  line-height: 1.5;
-  color-scheme: light dark;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 * {
   font-family: Aquire, Nasalization, sans-serif;
-}
-
-html,
-body {
-  background-color: white;
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-  box-sizing: border-box;
-  width: 100%;
-  /* nav 100px */
-  height: calc(100vh - 100px);
-}
-
-nav {
-  background-color: #ffffff;
-  height: 100px;
-}
-
-@theme {
-  /* black */
-  --color-primary: #000000;
-  /* white */
-  --color-secondary: #ffffff;
-  /* gray-500 */
-  --color-tertiary: #6a7282;
-  /* gray-200 */
-  --color-quaternary: #e5e7eb;
-  /* gray-100 */
-  --color-quinary: #f7fafc;
 }
 
 .toast {
@@ -61,5 +83,4 @@ nav {
   top: 90px;
   left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
 }

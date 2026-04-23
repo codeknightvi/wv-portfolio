@@ -7,7 +7,11 @@ import {
   useState,
 } from "react";
 
-export default function RevealOnScroll({ children }: { children: ReactNode }) {
+export default function useRevealOnScroll({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref: MutableRefObject<null> = useRef(null);
 

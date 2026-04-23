@@ -1,5 +1,5 @@
+import { WV_BACKGROUND } from "@config/assets";
 import { BAT_CAVE_WALLPAPER } from "@config/env";
-import { wvBackground } from "@constants/imagePath";
 
 const HomeCover = () => {
   return (
@@ -7,7 +7,7 @@ const HomeCover = () => {
       className="bg-cover h-full"
       style={{ backgroundImage: `url(${BAT_CAVE_WALLPAPER})` }}
     >
-      <div className="flex justify-between items-center ml-14 md:ml-28 lg:ml-28 py-4 text-secondary">
+      <div className="flex justify-between items-center ml-14 md:ml-28 lg:ml-28 py-4 text-white">
         <div>
           <h1 className="text-2xl md:text-4xl ">Hello, World !</h1>
         </div>
@@ -20,7 +20,7 @@ const HomeCover = () => {
           </p>
         </div>
         <div>
-          <img className="max-h-screen" src={wvBackground} alt="profilepic" />
+          <img className="max-h-screen" src={WV_BACKGROUND} alt="profilepic" />
         </div>
       </div>
     </div>

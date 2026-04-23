@@ -1,4 +1,4 @@
-import TypeWriter from "./TypeWtriter";
+import TypeWriter from "./Typewriter";
 
 export default function LandingPage() {
   return (
