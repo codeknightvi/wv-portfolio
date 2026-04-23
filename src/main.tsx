@@ -2,13 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Root from "./Root";
+import LandingPage from "@pages/landing";
+import AboutPage from "@pages/about";
+import HomePage from "@pages/home";
 import WorkPage from "@pages/work";
 import ProjectPage from "@pages/projects";
-import HomePage from "@pages/home";
-import Root from "./Root";
-import AboutPage from "@pages/about";
-import LandingPage from "@pages/landing";
 import { routes } from "@config/routes";
+
+export const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   </React.StrictMode>,
 );

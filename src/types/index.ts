@@ -25,11 +25,6 @@ export type GalleryPropsType = {
   ref?: Node;
 };
 
-export type Skill = {
-  name: string;
-  url: string;
-};
-
 export type Project = {
   id: number;
   name: string;
@@ -40,8 +35,6 @@ export type Project = {
   status: "coming soon" | "under maintenance" | "available";
   updateDate: number;
 };
-
-export type SoftwareSkill = { name: string; skills: Skill[] };
 
 export type Certificate = {
   name: string;
