@@ -31,7 +31,7 @@ const ToastProvider = ({ children }: { children: ReactNode }) => {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [isOpen, 3000]);
+  }, [isOpen]);
 
   const openToastHandler = () => {
     setIsOpen(true);
