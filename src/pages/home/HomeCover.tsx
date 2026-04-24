@@ -13,7 +13,7 @@ const HomeCover = () => {
         </div>
         <div className="my-6">
           <h1 className="text-sm md:text-4xl">
-            I'm Woramongkol Vichayaworanan
+            I&apos;m Woramongkol Vichayaworanan
           </h1>
           <p className="text-sm md:text-3xl">
             frontend developer based in Bangkok, Thailand.

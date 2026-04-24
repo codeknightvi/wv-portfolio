@@ -3,10 +3,10 @@ import { Project } from "@_types";
 export default function ProjectCard(project: Readonly<Project>) {
   return (
     <a
+      className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center border border-quaternary rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-quinary"
       href={project.url}
       target="_blank"
       rel="noreferrer"
-      className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center border border-quaternary rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-quinary"
     >
       <div className="flex flex-col items-center justify-between h-full w-full">
         <div className="flex flex-col items-center mb-2 text-xl md:text-2xl font-bold tracking-tight">
