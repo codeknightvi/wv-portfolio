@@ -4,7 +4,8 @@ export default function LandingPage() {
   return (
     <div className="text-2xl md:text-4xl">
       <TypeWriter
-        text="Greeting! welcome to John's portfolio website you may proceed :) ==> "
+        title="Greeting! I’m John — Frontend Developer"
+        content="Explore my projects, skills, and experience. :) ==> "
         delay={40}
       />
     </div>

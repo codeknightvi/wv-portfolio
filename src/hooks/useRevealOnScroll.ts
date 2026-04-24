@@ -37,9 +37,12 @@ export default function useRevealOnScroll({
     isVisible ? "opacity-100" : "opacity-0"
   }`;
 
-  return createElement("div", {
-    ref: ref,
-    className: classes,
-    children: children,
-  });
+  return createElement(
+    "div",
+    {
+      ref,
+      className: classes,
+    },
+    children,
+  );
 }

@@ -3,9 +3,10 @@ import { Experience } from "@_types";
 export const experience: Experience[] = [
   {
     id: 1,
-    period: "Jan 2026 - Present · 2 mon",
     position: "Frontend Developer",
     place: "PTT Digital Solutions Company Limited",
+    start_date: "2026-01-01",
+    end_date: null,
     work: [
       "Develop and maintain web applications using Next.js, React.js, and modern JavaScript (ES6+)",
       "Build scalable modules for POS systems (transaction flows, receipts, payment integrations), inventory management (stock tracking, reporting, analytics dashboards), backoffice admin panels (role-based access, reporting systems), and carpool service platforms (booking flows, trip management)",
@@ -20,9 +21,10 @@ export const experience: Experience[] = [
   },
   {
     id: 2,
-    period: "Jun 2024 - Apr 2025 · 11 mon",
     position: "React Developer",
     place: "100x",
+    start_date: "2024-06-01",
+    end_date: "2025-04-01",
     work: [
       "Develop and maintain high-performance web interfaces for core Web3 products using React.js and TypeScript",
       "Build scalable frontend modules for perpetual trading platform (DESK) including order books, trading UI, dashboards, analytics screens, real-time price feeds, and chart components",
@@ -38,9 +40,10 @@ export const experience: Experience[] = [
   },
   {
     id: 3,
-    period: "Sep 2022 - Dec 2022 · 3 mon",
     position: "Graphic Designer",
     place: "Sabuy Technology Co.,ltd - Sabuy Digital",
+    start_date: "2022-09-01",
+    end_date: "2022-12-01",
     work: [
       "Taking part as an Exhibitor: Thailand Crypto Expo, Blockchain Genesis Thailand, Digitect Asean",
       "Content Creating: for Advertising Campaigns",
@@ -51,9 +54,10 @@ export const experience: Experience[] = [
   },
   {
     id: 4,
-    period: "Jun 2021 - Aug 2021 · 3 mon",
     position: "Intern",
     place: "Auros Company Limited - Land Analysis and Development Consultant",
+    start_date: "2021-06-01",
+    end_date: "2021-08-01",
     work: [
       "Database Building - Update property listings: Location, Market Price, Land Size",
       "Land Survey - across Bangkok",

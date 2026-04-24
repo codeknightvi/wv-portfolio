@@ -7,7 +7,7 @@ export default function Toast() {
   return (
     <div className="toast bg-primary text-primary-foreground border-secondary rounded-2xl border p-4 pt-1 text-center">
       <button
-        className="cursor-pointer text-right"
+        className="w-full cursor-pointer text-end"
         onClick={() => toastReducer?.action.closeToast()}
         aria-label="Close"
       >

@@ -1,6 +1,8 @@
 import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { experience } from "@mock-data/experience";
 import { cn } from "@utils/cn";
+import { formatPeriod } from "@utils/formatPeriod";
+import { getDurationFromISO } from "@utils/getDurationFromISO";
 
 const Experience = () => {
   const { hoveredId, handleOnMouseEnter } = useHoveredPoint();
@@ -11,7 +13,7 @@ const Experience = () => {
       <ol className="border-quaternary relative ml-4 border-l">
         {experience.map((exp) => {
           return (
-            <li className="mb-10 ml-4" key={exp.id}>
+            <li key={exp.id} className="mb-10 ml-4">
               <button
                 aria-label={`Timeline point for ${exp.id}`}
                 onMouseEnter={() => handleOnMouseEnter(exp.id)}
@@ -22,13 +24,12 @@ const Experience = () => {
                 )}
               />
               <time
-                className={cn(
-                  "text-tertiary mb-1 text-sm leading-none font-normal",
-                  [hoveredId === exp.id && "text-primary"],
-                )}
+                className={cn("text-sm leading-none font-normal", [
+                  hoveredId === exp.id && "text-tertiary",
+                ])}
               >
-                {" "}
-                {exp.period}
+                {formatPeriod(exp.start_date, exp.end_date)} ·
+                {getDurationFromISO(exp.start_date, exp.end_date ?? undefined)}
               </time>
               <h3 className="text-tertiary text-lg font-semibold">
                 {exp.position} | @ {exp.place}

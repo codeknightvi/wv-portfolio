@@ -8,9 +8,10 @@ export type Education = { id: number; year: string; place: string };
 
 export type Experience = {
   id: number;
-  period: string;
   position: string;
   place: string;
+  start_date: string;
+  end_date: string | null;
   work: string[];
 };
 

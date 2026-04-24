@@ -66,6 +66,8 @@ export default function Skills() {
                     <img
                       src={skill.url}
                       alt={skill.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 object-contain md:w-20"
                     />
                   </div>
