@@ -46,21 +46,21 @@ export default function Navbar() {
   return (
     <nav
       className="
-        z-10
-        fixed top-0 w-screen
-        flex items-center justify-between
-        p-4 px-[25px] lg:px-[100px]
-        bg-primary dark:bg-black
-        text-black dark:text-white
-        border-b border-quaternary
+        bg-primary
+        border-quaternary fixed top-0
+        z-10 flex w-screen
+        items-center justify-between border-b
+        p-4 px-[25px]
+        text-black lg:px-[100px]
+        dark:bg-black dark:text-white
       "
     >
       <a
         href={routes.home.path}
         className="
-          inline-flex items-center justify-center
-          p-1 rounded-full
-          bg-primary dark:bg-white
+          bg-primary inline-flex items-center
+          justify-center rounded-full
+          p-1 dark:bg-white
         "
       >
         <img
@@ -70,22 +70,22 @@ export default function Navbar() {
         />
       </a>
 
-      <button className="md:hidden block z-10 me-4">
+      <button className="z-10 me-4 block md:hidden">
         <Menu size={20} onClick={toggleHandler} />
       </button>
 
       <ul
         className={twMerge(
           `
-          absolute left-0 w-full mt-4 p-4
-          flex flex-col gap-2
-          font-medium
-          border border-quaternary rounded-lg
+          border-quaternary absolute left-0 mt-4 flex
+          w-full flex-col gap-2
+          rounded-lg
+          border p-4 font-medium
           transition-[opacity,transform] duration-500 ease-in
-          md:static md:flex-row md:items-center md:space-x-8
-          md:w-auto md:p-0 md:mt-0 md:border-0
+          md:static md:mt-0 md:w-auto md:flex-row
+          md:items-center md:space-x-8 md:border-0 md:p-0
         `,
-          isMenuOpen ? "opacity-100 -bottom-43" : "opacity-0 -top-100",
+          isMenuOpen ? "-bottom-43 opacity-100" : "-top-100 opacity-0",
         )}
       >
         {Object.keys(routes).map((link) => (
@@ -96,7 +96,7 @@ export default function Navbar() {
             className={({ isActive }) =>
               twMerge(
                 "px-2 transition duration-300",
-                "text-black dark:text-white hover:text-tertiary",
+                "hover:text-tertiary text-black dark:text-white",
                 isActive && "font-bold",
               )
             }
@@ -111,13 +111,13 @@ export default function Navbar() {
             onClick={() => setListVisible((prev) => !prev)}
             className="relative flex items-center text-black dark:text-white"
           >
-            <p className="px-2 transition duration-300 hover:text-tertiary">
+            <p className="hover:text-tertiary px-2 transition duration-300">
               contact
             </p>
 
-            <span className="border-l hover:bg-quaternary">
+            <span className="hover:bg-quaternary border-l">
               <svg
-                className="w-2.5 h-2.5 ml-2"
+                className="ml-2 h-2.5 w-2.5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 10 6"
@@ -136,22 +136,22 @@ export default function Navbar() {
             <div
               className={twMerge(
                 `
-                absolute top-full left-0 -ml-30
-                 mt-1 min-w-full w-max
-                rounded shadow-md transition
-                bg-primary text-black dark:text-white
+                bg-primary absolute top-full left-0
+                 mt-1 -ml-30 w-max
+                min-w-full rounded text-black
+                shadow-md transition dark:text-white
               `,
                 listVisible ? "visible" : "invisible",
               )}
             >
-              <ul className="text-left border rounded-sm">
+              <ul className="rounded-sm border text-left">
                 {contactChannel.map((item) => (
                   <li
                     key={item.via}
                     className="
-                      px-4 py-1
-                      border-b
-                      hover:bg-quaternary
+                      hover:bg-quaternary border-b
+                      px-4
+                      py-1
                     "
                   >
                     <button onClick={() => dropdownHandler(item)}>

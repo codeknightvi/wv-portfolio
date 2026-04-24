@@ -5,7 +5,7 @@ export default function Toast() {
   const toastReducer = useContext(ToastContext);
 
   return (
-    <div className="toast bg-primary text-primary-foreground border border-secondary rounded-2xl p-4 pt-1 text-center">
+    <div className="toast bg-primary text-primary-foreground border-secondary rounded-2xl border p-4 pt-1 text-center">
       <button
         className="cursor-pointer text-right"
         onClick={() => toastReducer?.action.closeToast()}

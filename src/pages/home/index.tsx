@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       <HomeCover />
-      <div className="py-5 md:py-20 mx-10">
+      <div className="mx-10 py-5 md:py-20">
         <Skills />
       </div>
     </>

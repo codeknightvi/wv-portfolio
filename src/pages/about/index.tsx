@@ -9,7 +9,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <div className="m-0 sm:m-4 p-2 sm:p-0 lg:p-10 text-base lg:text-3xl ">
+      <div className="m-0 p-2 text-base sm:m-4 sm:p-0 lg:p-10 lg:text-3xl ">
         Frontend Developer focused on React, Next.js, and TypeScript,
         building scalable, high-performance web applications. Experienced in
         real-time interfaces, data-driven dashboards, and structured business
@@ -19,11 +19,11 @@ export default function AboutPage() {
         environments.
       </div>
       <section className="mb-4">
-        <h1 className="text-3xl section mb-2">Certificate</h1>
+        <h1 className="section mb-2 text-3xl">Certificate</h1>
         <div className="grid grid-cols-3 gap-2">
           {certificates.map((cer) => {
             return cer.name === "invalid" ? (
-              <div className="flex p-5 border flex-col justify-center items-center" />
+              <div className="flex flex-col items-center justify-center border p-5" />
             ) : (
               <CertificateCard key={cer.name} {...cer} />
             );
@@ -31,8 +31,8 @@ export default function AboutPage() {
         </div>
       </section>
       <section>
-        <h1 className="text-3xl section">Education</h1>
-        <ol className="relative border-l border-quaternary ml-4">
+        <h1 className="section text-3xl">Education</h1>
+        <ol className="border-quaternary relative ml-4 border-l">
           {education.map((edu) => {
             return (
               <li key={edu.year} className="mb-10 ml-4">
@@ -40,13 +40,13 @@ export default function AboutPage() {
                   onMouseEnter={() => handleOnMouseEnter(edu.id)}
                   onMouseLeave={() => handleOnMouseEnter(null)}
                   className={twMerge(
-                    "absolute w-3 h-3 bg-quaternary rounded-full mt-1.5 -left-1.5 border border-quaternary",
+                    "bg-quaternary border-quaternary absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border",
                     [hoveredId === edu.id && "bg-primary"]
                   )}
                 />
                 <time
                   className={twMerge(
-                    "mb-1 text-sm font-normal leading-none text-tertiary",
+                    "text-tertiary mb-1 text-sm leading-none font-normal",
                     [hoveredId === edu.id && "text-primary"]
                   )}
                 >

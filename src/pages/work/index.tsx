@@ -14,7 +14,7 @@ export default function WorkPage() {
     <>
       <Experience />
       <ProjectJumper />
-      <div className="flex flex-col gap-y-6 items-center">
+      <div className="flex flex-col items-center gap-y-6">
         <RevealOnScroll>
           <Gallery data={threeddesign} id="3d" />
         </RevealOnScroll>
