@@ -4,10 +4,10 @@ import { Menu } from "lucide-react";
 import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
-import { twMerge } from "tailwind-merge";
 import { ContactChannel } from "@_types";
 import { WV_LOGO } from "@config/assets";
 import useWindowDimensions from "@hooks/useWindowDimension";
+import { cn } from "@utils/cn";
 
 export default function Navbar() {
   const toastReducer = useContext(ToastContext);
@@ -75,17 +75,20 @@ export default function Navbar() {
       </button>
 
       <ul
-        className={twMerge(
+        className={cn(
           `
-          border-quaternary absolute left-0 mt-4 flex
-          w-full flex-col gap-2
-          rounded-lg
-          border p-4 font-medium
-          transition-[opacity,transform] duration-500 ease-in
-          md:static md:mt-0 md:w-auto md:flex-row
-          md:items-center md:space-x-8 md:border-0 md:p-0
-        `,
-          isMenuOpen ? "-bottom-43 opacity-100" : "-top-100 opacity-0",
+      border-quaternary bg-primary absolute
+      top-full left-0 mt-4 flex
+      w-full flex-col gap-2
+      rounded-lg border p-4
+      font-medium transition-[opacity,transform] duration-500
+      ease-in
+      md:static md:mt-0 md:w-auto
+      md:flex-row md:items-center
+      md:space-x-8 md:border-0
+      md:bg-transparent md:p-0
+    `,
+          [isMenuOpen ? "-bottom-46.5 opacity-100" : "-top-100 opacity-0"],
         )}
       >
         {Object.keys(routes).map((link) => (
@@ -94,7 +97,7 @@ export default function Navbar() {
             to={link}
             onClick={() => isMobile && setIsMenuOpen(false)}
             className={({ isActive }) =>
-              twMerge(
+              cn(
                 "px-2 transition duration-300",
                 "hover:text-tertiary text-black dark:text-white",
                 isActive && "font-bold",
@@ -134,7 +137,7 @@ export default function Navbar() {
 
             {/* Dropdown list */}
             <div
-              className={twMerge(
+              className={cn(
                 `
                 bg-primary absolute top-full left-0
                  mt-1 -ml-30 w-max

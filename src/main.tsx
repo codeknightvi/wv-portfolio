@@ -11,6 +11,7 @@ import HomePage from "@pages/home";
 import WorkPage from "@pages/work";
 import ProjectPage from "@pages/projects";
 import { routes } from "@config/routes";
+import NotFoundPage from "@pages/not-found";
 
 export const queryClient = new QueryClient();
 
@@ -19,14 +20,17 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
-      { path: "/", element: <LandingPage />, index: true },
+      { index: true, element: <LandingPage /> },
       { path: routes.about.path, element: <AboutPage /> },
       { path: routes.home.path, element: <HomePage /> },
       { path: routes.work.path, element: <WorkPage /> },
       { path: routes.projects.path, element: <ProjectPage /> },
     ],
   },
-  { path: "*", element: <>invalid page</> },
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

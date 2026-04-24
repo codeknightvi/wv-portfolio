@@ -15,6 +15,9 @@ const config: Config = {
         secondary: "var(--secondary)",
         "secondary-foreground": "var(--secondary-foreground)",
 
+        tertiary: "var(--tertiary)",
+        quaternary: "var(--quaternary)",
+
         border: "var(--border)",
         ring: "var(--ring, var(--border))",
       },
