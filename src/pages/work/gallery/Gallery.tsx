@@ -23,7 +23,7 @@ export default function Gallery({ data, id }: Readonly<GalleryPropsType>) {
     <div
       id={id}
       ref={containerRef}
-      className="container transition-opacity ease-in duration-700 relative"
+      className="relative container transition-opacity duration-700 ease-in"
       onMouseMove={(ev: MouseEvent) => handleMouseMove(ev)}
       onMouseLeave={(ev: MouseEvent) =>
         setMousePosition({ x: 0, y: ev.clientY })

@@ -3,25 +3,25 @@ import { Project } from "@_types";
 export default function ProjectCard(project: Readonly<Project>) {
   return (
     <a
-      className="flex w-full p-4 mt-4 mx-4 grow flex-col items-center border border-quaternary rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-quinary"
+      className="border-quaternary hover:bg-quinary mx-4 mt-4 flex w-full grow flex-col items-center rounded-lg border p-4 shadow-sm md:max-w-xl md:flex-row"
       href={project.url}
       target="_blank"
       rel="noreferrer"
     >
-      <div className="flex flex-col items-center justify-between h-full w-full">
-        <div className="flex flex-col items-center mb-2 text-xl md:text-2xl font-bold tracking-tight">
+      <div className="flex h-full w-full flex-col items-center justify-between">
+        <div className="mb-2 flex flex-col items-center text-xl font-bold tracking-tight md:text-2xl">
           {project.name}
           {project.status === "under maintenance" && (
-            <div className="text-xs font-bold tracking-tight text-tertiary">
+            <div className="text-tertiary text-xs font-bold tracking-tight">
               (under maintenance)
             </div>
           )}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col items-center md:flex-row">
           {project.status !== "coming soon" && (
             <img
-              className="object-cover md:object-contain w-full rounded-t-lg h-52 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+              className="h-52 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg md:object-contain"
               src={project.cover}
               alt="landing_page_img"
             />

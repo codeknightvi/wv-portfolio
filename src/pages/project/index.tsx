@@ -4,7 +4,7 @@ import { Project } from "@_types";
 
 export default function ProjectPage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 content-center justify-items-center gap-4">
+    <div className="grid grid-cols-1 content-center justify-items-center gap-4 md:grid-cols-2 2xl:grid-cols-3">
       {projects.map((project: Project) => (
         <ProjectCard key={project.id} {...project} />
       ))}

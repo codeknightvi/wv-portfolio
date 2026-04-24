@@ -23,7 +23,7 @@ export default function Typewriter({ text, delay }: Readonly<TypewriterProps>) {
   }, [currentIndex, delay, text]);
 
   return (
-    <span className="md:absolute md:top-[50%] md:left-[50%] md:transform md:translate-y-[-50%] md:translate-x-[-50%] md:origin-center">
+    <span className="md:absolute md:top-[50%] md:left-[50%] md:origin-center md:translate-x-[-50%] md:translate-y-[-50%] md:transform">
       {currentText}
       {linkVisible ? (
         <Link to={"/home"}>

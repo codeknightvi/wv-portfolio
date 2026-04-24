@@ -54,7 +54,7 @@ export default function Skills() {
     <section>
       {Object.values(groupedSkills).map((group) => (
         <div key={group.name}>
-          <h1 className="text-center text-lg lg:text-3xl my-4 md:my-12 capitalize">
+          <h1 className="my-4 text-center text-lg capitalize md:my-12 lg:text-3xl">
             {group.name}
           </h1>
 
@@ -62,11 +62,11 @@ export default function Skills() {
             {group.skills.map((skill) => (
               <Tooltip key={skill.id}>
                 <TooltipTrigger>
-                  <div className="mx-4 md:mx-10 hover:scale-125 transition ease-in-out">
+                  <div className="mx-4 transition ease-in-out hover:scale-125 md:mx-10">
                     <img
                       src={skill.url}
                       alt={skill.name}
-                      className="w-10 md:w-20 object-contain"
+                      className="w-10 object-contain md:w-20"
                     />
                   </div>
                 </TooltipTrigger>
