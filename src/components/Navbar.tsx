@@ -78,17 +78,17 @@ export default function Navbar() {
         className={cn(
           `
       border-quaternary bg-primary absolute
-      left-0 mt-4 flex w-full
-      flex-col gap-2 rounded-lg
-      border p-4 font-medium
-      transition-[opacity,transform] duration-500 ease-in
-
+      top-full left-0 mt-4 flex
+      w-full flex-col gap-2
+      rounded-lg border p-4
+      font-medium transition-[opacity,transform] duration-500
+      ease-in
       md:static md:mt-0 md:w-auto
       md:flex-row md:items-center
       md:space-x-8 md:border-0
       md:bg-transparent md:p-0
     `,
-          isMenuOpen ? "-bottom-46.5 opacity-100" : "-top-100 opacity-0",
+          [isMenuOpen ? "-bottom-46.5 opacity-100" : "-top-100 opacity-0"],
         )}
       >
         {Object.keys(routes).map((link) => (

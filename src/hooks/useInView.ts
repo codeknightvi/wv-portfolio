@@ -5,6 +5,8 @@ export function useInView<T extends HTMLElement>(
 ) {
   const ref = useRef<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
 
   useEffect(() => {
     if (!ref.current) return;
@@ -14,12 +16,12 @@ export function useInView<T extends HTMLElement>(
         setIsVisible(true);
         observer.disconnect();
       }
-    }, options);
+    }, optionsRef.current);
 
     observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, [options]);
+  }, []);
 
   return { ref, isVisible };
 }

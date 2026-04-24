@@ -1,11 +1,7 @@
 import img34 from "./3-4.png";
-
 import img35 from "./3-5.png";
-
 import img36 from "./3-6.png";
-
 import img37 from "./3-7.png";
-
 import img38 from "./3-8.png";
 
 export const threeddesign = [

@@ -35,7 +35,7 @@ export default function AboutPage() {
           {education.map((edu) => (
             <li key={edu.year} className="mb-10 ml-4">
               <button
-                aria-label={`Timeline point for ${edu.id}`}
+                aria-label={`Timeline point for ${edu.place} (${edu.year})`}
                 onMouseEnter={() => handleOnMouseEnter(edu.id)}
                 onMouseLeave={() => handleOnMouseEnter(null)}
                 className={cn(

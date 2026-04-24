@@ -6,6 +6,7 @@ export function formatPeriod(startISO: string, endISO: string | null): string {
     date.toLocaleString("en-US", {
       month: "short",
       year: "numeric",
+      timeZone: "UTC",
     });
 
   const startText = format(start);

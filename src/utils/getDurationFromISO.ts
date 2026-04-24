@@ -3,8 +3,8 @@ export function getDurationFromISO(startISO: string, endISO?: string): string {
   const end = endISO ? new Date(endISO) : new Date();
 
   let totalMonths =
-    (end.getFullYear() - start.getFullYear()) * 12 +
-    (end.getMonth() - start.getMonth());
+    (end.getUTCFullYear() - start.getUTCFullYear()) * 12 +
+    (end.getUTCMonth() - start.getUTCMonth());
 
   totalMonths = Math.max(totalMonths, 0);
 
