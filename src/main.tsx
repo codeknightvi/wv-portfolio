@@ -2,31 +2,42 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import WorkPage from "@pages/work-page";
-import ProjectPage from "@pages/project-page";
-import HomePage from "@pages/home-page";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Root from "./Root";
-import AboutPage from "@pages/about-page";
-import LandingPage from "@pages/landing-page";
+import LandingPage from "@pages/landing";
+import AboutPage from "@pages/about";
+import HomePage from "@pages/home";
+import WorkPage from "@pages/work";
+import ProjectPage from "@pages/projects";
 import { routes } from "@config/routes";
+import NotFoundPage from "@pages/not-found";
+
+export const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
-      { path: "/", element: <LandingPage />, index: true },
+      { index: true, element: <LandingPage /> },
       { path: routes.about.path, element: <AboutPage /> },
       { path: routes.home.path, element: <HomePage /> },
       { path: routes.work.path, element: <WorkPage /> },
       { path: routes.projects.path, element: <ProjectPage /> },
     ],
   },
-  { path: "*", element: <>invalid page</> },
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  </React.StrictMode>,
 );

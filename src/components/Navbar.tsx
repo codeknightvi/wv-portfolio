@@ -1,108 +1,126 @@
 import { useEffect, useState, useCallback, useContext, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { MenuOutline } from "react-ionicons";
+import { Menu } from "lucide-react";
 import { contactChannel } from "@mock-data/contact";
 import { routes } from "@config/routes";
 import { ToastContext } from "context/toast";
-import { twMerge } from "tailwind-merge";
 import { ContactChannel } from "@_types";
-import { wvLogo } from "@constants/imagePath";
-import useWindowDimensions from "@hooks/useWindowsDimension";
+import { WV_LOGO } from "@config/assets";
+import useWindowDimensions from "@hooks/useWindowDimension";
+import { cn } from "@utils/cn";
 
 export default function Navbar() {
   const toastReducer = useContext(ToastContext);
   const { width } = useWindowDimensions();
   const location = useLocation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [listVisible, setListVisible] = useState(false);
+
   const isMobile = useMemo(() => width < 768, [width]);
 
   useEffect(() => {
-    if (!isMobile) {
-      setIsMenuOpen(true);
-      setListVisible(false);
-    }
     if (isMobile) {
       setIsMenuOpen(false);
+      setListVisible(false);
+    } else {
+      setIsMenuOpen(true);
       setListVisible(false);
     }
   }, [isMobile, location]);
 
-  const toggleHandler = useCallback(
-    () => setIsMenuOpen((state) => !state),
-    [isMenuOpen]
-  );
+  const toggleHandler = useCallback(() => {
+    setIsMenuOpen((state) => !state);
+  }, []);
 
-  const dropdownHandler = (l: ContactChannel) => {
-    if (l.url) {
-      window.open(l.url, "_blank");
+  const dropdownHandler = (item: ContactChannel) => {
+    if (item.url) {
+      window.open(item.url, "_blank");
     } else {
-      navigator.clipboard.writeText(l.via);
+      navigator.clipboard.writeText(item.via);
       toastReducer?.action.openToast();
-      toastReducer?.action.setToastMessage(l.via);
+      toastReducer?.action.setToastMessage(item.via);
     }
   };
 
   return (
-    <nav className="z-10 bg-secondary border-b-2 border-quaternary w-screen fixed flex justify-between flex-wrap items-center mx-auto p-4 px-[25px] lg:px-[100px] top-0 max-x-screen-xl">
-      <a href={routes.home.path}>
-        <img src={wvLogo} className="h-10 mr-3" alt="WVLogo" />
-      </a>
-      {/* mobile menu button */}
-      <button className="me-4 cursor-ponter md:hidden block z-10">
-        <MenuOutline
-          color="#00000"
-          height="20px"
-          width="20px"
-          onClick={toggleHandler}
+    <nav
+      className="
+        bg-primary
+        border-quaternary fixed top-0
+        z-10 flex w-screen
+        items-center justify-between border-b
+        p-4 px-[25px]
+        text-black lg:px-[100px]
+        dark:bg-black dark:text-white
+      "
+    >
+      <a
+        href={routes.home.path}
+        className="
+          bg-primary inline-flex items-center
+          justify-center rounded-full
+          p-1 dark:bg-white
+        "
+      >
+        <img
+          src={WV_LOGO}
+          alt="WVLogo"
+          className="h-10 w-10 rounded-full object-cover"
         />
+      </a>
+
+      <button className="z-10 me-4 block md:hidden">
+        <Menu size={20} onClick={toggleHandler} />
       </button>
+
       <ul
-        className={twMerge(
-          "absolute w-full border-t-0 my-2 trasnsition-all ease-in duration-500 md:py-4 left-0 md:w-auto md:static z-[-1] md:-top-120px md:z-auto md:flex md:items-center md:p-0 md:flex-row md:space-x-8 md:mt-0 flex-col font-medium p-4 mt-4 border border-quaternary rounded-lg md:border-0 bg-secondary",
-          [isMenuOpen ? "-bottom-43 opacity-100" : "opacity-0 -top-100"]
+        className={cn(
+          `
+      border-quaternary bg-primary absolute
+      top-full left-0 mt-4 flex
+      w-full flex-col gap-2
+      rounded-lg border p-4
+      font-medium transition-[opacity,transform] duration-500
+      ease-in
+      md:static md:mt-0 md:w-auto
+      md:flex-row md:items-center
+      md:space-x-8 md:border-0
+      md:bg-transparent md:p-0
+    `,
+          [isMenuOpen ? "-bottom-46.5 opacity-100" : "-top-100 opacity-0"],
         )}
       >
         {Object.keys(routes).map((link) => (
           <NavLink
-            onClick={() => {
-              if (isMobile) {
-                setIsMenuOpen(false);
-              }
-            }}
             key={link}
             to={link}
-            className="transition duration-300 hover:text-tertiary z-10 "
-            style={({ isActive, isPending, isTransitioning }) => {
-              return {
-                fontWeight: isActive ? "bold" : "",
-                color: isPending ? "red" : "black",
-                viewTransitionName: isTransitioning ? "slide" : "",
-              };
-            }}
+            onClick={() => isMobile && setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              cn(
+                "px-2 transition duration-300",
+                "hover:text-tertiary text-black dark:text-white",
+                isActive && "font-bold",
+              )
+            }
           >
-            <li className="px-2">{link}</li>
-            <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto"></span>
+            <li>{link}</li>
           </NavLink>
         ))}
-        {/* dropdown */}
-        <li className="relative flex justify-center items-center z-2">
+
+        {/* Contact dropdown */}
+        <li className="relative flex items-center justify-center">
           <button
-            className="
-                        relative flex justify-center items-center
-                        text-black rounded
-                        "
-            onClick={() => {
-              setListVisible((prev) => !prev);
-            }}
+            onClick={() => setListVisible((prev) => !prev)}
+            className="relative flex items-center text-black dark:text-white"
           >
-            <p className="px-2 text-black transition duration-300 hover:text-tertiary">
+            <p className="hover:text-tertiary px-2 transition duration-300">
               contact
-              <span className="block max-w-0 duration-500 h-0.5 bg-black m-auto" />
             </p>
-            <span className="border-l hover:bg-quaternary">
+
+            <span className="hover:bg-quaternary border-l">
               <svg
-                className="w-2.5 h-2.5 ml-2"
+                className="ml-2 h-2.5 w-2.5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 10 6"
@@ -117,25 +135,30 @@ export default function Navbar() {
               </svg>
             </span>
 
-            {/* contact */}
+            {/* Dropdown list */}
             <div
-              className={twMerge(
-                "absolute top-full min-w-full w-max shadow-md mt-1 rounded transition bg-secondary",
-                [listVisible ? "visible" : "invisible"]
+              className={cn(
+                `
+                bg-primary absolute top-full left-0
+                 mt-1 -ml-30 w-max
+                min-w-full rounded text-black
+                shadow-md transition dark:text-white
+              `,
+                listVisible ? "visible" : "invisible",
               )}
             >
-              <ul className="text-left border rounded-sm">
-                {contactChannel.map((link) => (
+              <ul className="rounded-sm border text-left">
+                {contactChannel.map((item) => (
                   <li
-                    className="px-4 py-1 hover:bg-quaternary border-b z-10"
-                    key={link.via}
+                    key={item.via}
+                    className="
+                      hover:bg-quaternary border-b
+                      px-4
+                      py-1
+                    "
                   >
-                    <button
-                      onClick={() => {
-                        dropdownHandler(link);
-                      }}
-                    >
-                      {link.src}: {link.via}
+                    <button onClick={() => dropdownHandler(item)}>
+                      {item.src}: {item.via}
                     </button>
                   </li>
                 ))}

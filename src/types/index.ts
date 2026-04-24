@@ -8,9 +8,10 @@ export type Education = { id: number; year: string; place: string };
 
 export type Experience = {
   id: number;
-  period: string;
   position: string;
   place: string;
+  start_date: string;
+  end_date: string | null;
   work: string[];
 };
 
@@ -25,11 +26,6 @@ export type GalleryPropsType = {
   ref?: Node;
 };
 
-export type Skill = {
-  name: string;
-  url: string;
-};
-
 export type Project = {
   id: number;
   name: string;
@@ -40,8 +36,6 @@ export type Project = {
   status: "coming soon" | "under maintenance" | "available";
   updateDate: number;
 };
-
-export type SoftwareSkill = { name: string; skills: Skill[] };
 
 export type Certificate = {
   name: string;
