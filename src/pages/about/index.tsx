@@ -1,6 +1,5 @@
 import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { education } from "@mock-data/education";
-import { twMerge } from "tailwind-merge";
 import CertificateCard from "./CertificateCard";
 import { certificates } from "@mock-data/certificates";
 import { cn } from "@utils/cn";
