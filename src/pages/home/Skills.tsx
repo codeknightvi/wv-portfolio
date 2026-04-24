@@ -4,7 +4,7 @@ import {
   TooltipTrigger,
 } from "@components/ui/tooltip";
 import { useSkillsQuery } from "@hooks/query/skills";
-import { supabase } from "lib/supabase";
+import { getSkillsUrl } from "@utils/getUrl";
 import { useMemo } from "react";
 
 type GroupedSkill = {
@@ -21,9 +21,6 @@ export default function Skills() {
 
   const groupedSkills = useMemo(() => {
     if (!skills?.length) return {};
-
-    const getUrl = (path: string) =>
-      supabase.storage.from("skills").getPublicUrl(path).data.publicUrl;
 
     return skills.reduce<Record<string, GroupedSkill>>((acc, skill) => {
       const key = skill.category ?? "other";
@@ -42,7 +39,7 @@ export default function Skills() {
             {
               id: skill.id,
               name: skill.name,
-              url: getUrl(skill.image_path),
+              url: getSkillsUrl(skill.image_path),
             },
           ],
         },
