@@ -2,11 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 type TypewriterProps = { title: string; content: string; delay: number };
 
-export default function Typewriter({
-  title,
-  content,
-  delay,
-}: Readonly<TypewriterProps>) {
+export default function Typewriter({ title, content, delay }: Readonly<TypewriterProps>) {
   const [currentContent, setCurrentContent] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [linkVisible, setLinkVisible] = useState(false);

@@ -1,17 +1,6 @@
-import {
-  createElement,
-  MutableRefObject,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { createElement, MutableRefObject, ReactNode, useEffect, useRef, useState } from "react";
 
-export default function useRevealOnScroll({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function useRevealOnScroll({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref: MutableRefObject<null> = useRef(null);
 
@@ -33,9 +22,7 @@ export default function useRevealOnScroll({
     };
   }, []);
 
-  const classes = `transition-opacity duration-1000 ${
-    isVisible ? "opacity-100" : "opacity-0"
-  }`;
+  const classes = `transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`;
 
   return createElement(
     "div",

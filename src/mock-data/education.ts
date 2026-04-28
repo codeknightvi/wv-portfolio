@@ -15,8 +15,7 @@ export const education: Education[] = [
   {
     id: 3,
     year: "2015-2017",
-    place:
-      "English-Mathematics Program, Wat Phrasri Mahadhat Secondary Demonstration School",
+    place: "English-Mathematics Program, Wat Phrasri Mahadhat Secondary Demonstration School",
   },
   {
     id: 4,
@@ -27,7 +26,6 @@ export const education: Education[] = [
   {
     id: 5,
     year: "2012-2015",
-    place:
-      "Intensive English Program, Wat Phrasri Mahadhat Secondary Demonstration School",
+    place: "Intensive English Program, Wat Phrasri Mahadhat Secondary Demonstration School",
   },
 ];
