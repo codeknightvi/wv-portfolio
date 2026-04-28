@@ -4,8 +4,7 @@ import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import importPlugin from "eslint-plugin-import";
-import tailwindcss from "eslint-plugin-tailwindcss";
+import importX from "eslint-plugin-import-x";
 import prettier from "eslint-config-prettier";
 
 export default [
@@ -26,18 +25,15 @@ export default [
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
-      import: importPlugin,
-      tailwindcss,
+      import: importX,
     },
     settings: {
       react: {
         version: "detect",
       },
-      tailwindcss: {
-        config: null,
-      },
     },
     rules: {
+      /* General */
       "no-console": "error",
 
       "no-unused-vars": "off",
@@ -62,9 +58,14 @@ export default [
       /* Vite HMR */
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 
-      /* Tailwind */
-      "tailwindcss/classnames-order": "warn",
-      "tailwindcss/no-custom-classname": "off",
+      /* Imports (ESLint 10 safe) */
+      "import/order": [
+        "warn",
+        {
+          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
+          "newlines-between": "always",
+        },
+      ],
     },
   },
 

@@ -1,8 +1,9 @@
-import { rendered, rendered2, threeddesign, threeddesign2 } from "../../../public/design/tu-work";
 import Experience from "@pages/work/Experience";
 import Gallery from "@pages/work/gallery/Gallery";
 import ProjectJumper from "@pages/work/ProjectJumper";
 import RevealOnScroll from "@hooks/useRevealOnScroll";
+
+import { rendered, rendered2, threeddesign, threeddesign2 } from "../../../public/design/tu-work";
 
 export default function WorkPage() {
   return (
