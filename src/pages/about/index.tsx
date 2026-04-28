@@ -10,11 +10,10 @@ export default function AboutPage() {
   return (
     <>
       <div className="m-0 p-2 text-base sm:m-4 sm:p-0 lg:p-10 lg:text-3xl ">
-        Frontend Developer focused on React, Next.js, and TypeScript, building
-        scalable, high-performance web applications. Experienced in real-time
-        interfaces, data-driven dashboards, and structured business workflows
-        across trading and enterprise systems. Strong in state management, API
-        integration, and clean, maintainable architecture. Committed to
+        Frontend Developer focused on React, Next.js, and TypeScript, building scalable,
+        high-performance web applications. Experienced in real-time interfaces, data-driven
+        dashboards, and structured business workflows across trading and enterprise systems. Strong
+        in state management, API integration, and clean, maintainable architecture. Committed to
         delivering reliable, production-ready solutions in Agile environments.
       </div>
       <section className="mb-4">

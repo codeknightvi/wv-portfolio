@@ -20,7 +20,7 @@ lerna-debug.log*
 *.local
 
 # Cache / temp
-#.todo
+todo.todo
 .cache/
 .tmp/
 
