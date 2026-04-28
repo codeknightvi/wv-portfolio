@@ -1,8 +1,9 @@
 import { useHoveredPoint } from "@hooks/useHoveredPoint";
 import { education } from "@mock-data/education";
-import CertificateCard from "./CertificateCard";
 import { certificates } from "@mock-data/certificates";
 import { cn } from "@utils/cn";
+
+import CertificateCard from "./CertificateCard";
 
 export default function AboutPage() {
   const { hoveredId, handleOnMouseEnter } = useHoveredPoint();
