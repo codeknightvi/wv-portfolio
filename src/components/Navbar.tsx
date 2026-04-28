@@ -63,11 +63,7 @@ export default function Navbar() {
           p-1 dark:bg-white
         "
       >
-        <img
-          src={WV_LOGO}
-          alt="WVLogo"
-          className="h-10 w-10 rounded-full object-cover"
-        />
+        <img src={WV_LOGO} alt="WVLogo" className="h-10 w-10 rounded-full object-cover" />
       </a>
 
       <button className="z-10 me-4 block md:hidden">
@@ -114,9 +110,7 @@ export default function Navbar() {
             onClick={() => setListVisible((prev) => !prev)}
             className="relative flex items-center text-black dark:text-white"
           >
-            <p className="hover:text-tertiary px-2 transition duration-300">
-              contact
-            </p>
+            <p className="hover:text-tertiary px-2 transition duration-300">contact</p>
 
             <span className="hover:bg-quaternary border-l">
               <svg

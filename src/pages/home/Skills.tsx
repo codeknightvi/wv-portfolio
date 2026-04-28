@@ -1,8 +1,4 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@components/ui/tooltip";
 import { useSkillsQuery } from "@hooks/query/skills";
 import { getSkillsUrl } from "@utils/getUrl";
 import { useMemo } from "react";
@@ -51,9 +47,7 @@ export default function Skills() {
     <section>
       {Object.values(groupedSkills).map((group) => (
         <div key={group.name}>
-          <h1 className="my-4 text-center text-lg capitalize md:my-12 lg:text-3xl">
-            {group.name}
-          </h1>
+          <h1 className="my-4 text-center text-lg capitalize md:my-12 lg:text-3xl">{group.name}</h1>
 
           <div className="flex flex-wrap items-center justify-center gap-y-2">
             {group.skills.map((skill) => (

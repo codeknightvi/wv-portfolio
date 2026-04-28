@@ -29,9 +29,7 @@ export default function ProjectCard(project: Readonly<Project>) {
 
           <div className="flex flex-col p-4 leading-normal">
             <p className="font-normal">
-              {project.status === "coming soon"
-                ? "coming soon ..."
-                : project.description}
+              {project.status === "coming soon" ? "coming soon ..." : project.description}
             </p>
           </div>
         </div>

@@ -29,8 +29,7 @@ export const projects: Project[] = [
     url: "https://pokedex-starter.pages.dev/",
     cover: "projects/pokedex.png",
     stack: ["react", "zustand"],
-    description:
-      "Servicing pokemon basic detail, element, abilities and stats from PokéAPI",
+    description: "Servicing pokemon basic detail, element, abilities and stats from PokéAPI",
     status: "under maintenance",
     updateDate: new Date("2025-12-09").getTime(),
   },
@@ -51,8 +50,7 @@ export const projects: Project[] = [
     url: "https://countdown-datepicker.pages.dev/",
     cover: "projects/datepicker.png",
     stack: ["react"],
-    description:
-      "Countdown app calculated by current time and date selected from date-picker",
+    description: "Countdown app calculated by current time and date selected from date-picker",
     status: "available",
     updateDate: new Date("2024-07-01").getTime(),
   },

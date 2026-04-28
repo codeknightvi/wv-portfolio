@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   color-scheme: light dark;
 
@@ -32,9 +31,9 @@
   --secondary: #ffffff;
   --secondary-foreground: #000000;
 
-  --tertiary: #9ca3af;   
+  --tertiary: #9ca3af;
 
-  --quaternary: #374151;   
+  --quaternary: #374151;
 
   --border: #ffffff;
 }
@@ -75,9 +74,8 @@
 
   nav {
     height: 100px;
-   }
+  }
 }
-
 
 * {
   font-family: Aquire, Nasalization, sans-serif;
