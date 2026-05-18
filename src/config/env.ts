@@ -1,1 +1,3 @@
-export const BAT_CAVE_WALLPAPER = import.meta.env.VITE_BAT_CAVE_WALLPAPER;
+export const BAT_CAVE_WALLPAPER =
+  import.meta.env.VITE_BAT_CAVE_WALLPAPER ||
+  "https://images3.alphacoders.com/160/thumb-1920-160927.jpg";
