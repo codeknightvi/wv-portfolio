@@ -38,6 +38,7 @@ export type Project = {
 };
 
 export type Certificate = {
+  id: number;
   name: string;
   score: number;
   maxScroe: number;

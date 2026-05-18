@@ -19,14 +19,17 @@ export default function AboutPage() {
       </div>
       <section className="mb-4">
         <h1 className="section mb-2 text-3xl">Certificate</h1>
-        <div className="grid grid-cols-3 gap-2">
-          {certificates.map((cer) => {
-            return cer.name === "invalid" ? (
-              <div className="flex flex-col items-center justify-center border p-5" />
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {certificates.map((cer) =>
+            cer.name === "invalid" ? (
+              <div
+                key={cer.id}
+                className="flex min-h-[160px] items-center justify-center border p-5"
+              />
             ) : (
-              <CertificateCard key={cer.name} {...cer} />
-            );
-          })}
+              <CertificateCard key={cer.id} {...cer} />
+            ),
+          )}
         </div>
       </section>
       <section>
