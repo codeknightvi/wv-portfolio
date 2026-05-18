@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   root: true,
 
@@ -9,13 +10,7 @@ module.exports = {
 
   parser: "@typescript-eslint/parser",
 
-  plugins: [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "react-refresh",
-    "tailwindcss",
-  ],
+  plugins: ["@typescript-eslint", "react", "react-hooks", "react-refresh", "tailwindcss"],
 
   extends: [
     "eslint:recommended",
@@ -42,10 +37,7 @@ module.exports = {
 
   rules: {
     /* Vite Fast Refresh */
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
+    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 
     /* Tailwind */
     "tailwindcss/classnames-order": "warn",

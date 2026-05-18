@@ -18,30 +18,18 @@ export default function Gallery({ data, id }: Readonly<GalleryPropsType>) {
   };
 
   return (
-    <div
-      id={id}
-      ref={ref}
-      className="relative container transition-opacity duration-700 ease-in"
-    >
+    <div id={id} ref={ref} className="relative container transition-opacity duration-700 ease-in">
       {isVisible ? (
         <div
           onMouseMove={handleMouseMove}
           onMouseLeave={(e) => setMousePosition({ x: 0, y: e.clientY })}
         >
-          <div
-            className="indicator top-[-15px]"
-            style={{ left: mousePosition.x }}
-          />
+          <div className="indicator top-[-15px]" style={{ left: mousePosition.x }} />
 
           <div className="gallery">
             {data.map((el) => (
               <div className="gallery-item cursor-pointer" key={el.src}>
-                <img
-                  src={el.src}
-                  alt={`img-${el.src}`}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <img src={el.src} alt={`img-${el.src}`} loading="lazy" decoding="async" />
               </div>
             ))}
           </div>

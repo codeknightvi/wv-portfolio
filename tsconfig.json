@@ -16,6 +16,7 @@
       "@_types": ["./types/index.ts"],
       "@_types/*": ["./types/*"]
     },
+
     "typeRoots": ["./src/@types", "./node_modules/@types"],
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],

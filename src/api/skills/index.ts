@@ -5,7 +5,6 @@ export async function getSkills(): Promise<Skill[]> {
   const { data, error } = await supabase.from("skills").select("*");
 
   if (error) {
-    console.error("Failed to fetch skills:", error);
     throw error;
   }
 
