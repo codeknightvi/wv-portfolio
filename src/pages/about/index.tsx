@@ -10,7 +10,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <div className="m-0 p-2 text-base sm:m-4 sm:p-0 lg:p-10 lg:text-3xl ">
+      <div className="m-0 p-2 text-base sm:m-4 sm:p-0 lg:p-10 lg:text-3xl">
         Frontend Developer focused on React, Next.js, and TypeScript, building scalable,
         high-performance web applications. Experienced in real-time interfaces, data-driven
         dashboards, and structured business workflows across trading and enterprise systems. Strong
@@ -21,7 +21,7 @@ export default function AboutPage() {
         <h1 className="section mb-2 text-3xl">Certificate</h1>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cer) =>
-            cer.name === "invalid" ? (
+            cer.maxScore === 0 ? (
               <div
                 key={cer.id}
                 className="flex min-h-[160px] items-center justify-center border p-5"

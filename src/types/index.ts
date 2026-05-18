@@ -41,6 +41,6 @@ export type Certificate = {
   id: number;
   name: string;
   score: number;
-  maxScroe: number;
+  maxScore: number;
   date: string;
 };
